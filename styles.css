@@ -1,0 +1,373 @@
+/* styles.css */
+:root {
+  --font-size-base: 1rem;
+  /* Cambiado a rem para mayor flexibilidad */
+}
+
+/* Reset de márgenes y padding */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: var(--font-size-base);
+}
+
+/* Tema claro (por defecto) */
+body {
+  /* Fondo más claro */
+  background-color: #333;
+  color: #333;
+  /* Color del texto */
+  margin: 0 auto;
+  /* Centrado */
+  line-height: 1.5;
+  /* Mejora la legibilidad */
+}
+
+/* Tema oscuro */
+body.dark-mode {
+  background-color: #121212;
+  /* Fondo oscuro */
+  color: #ffffff;
+  /* Texto claro */
+}
+
+header {
+  background-color: #333;
+  /* Fondo oscuro */
+  color: #ffffff;
+  /* Texto claro */
+    display: flex;
+  /* Espacio entre elementos */
+  justify-content: space-between;
+  /* Centrado vertical */
+  align-items: center;
+}
+
+/* Contenedores */
+.date-time {
+  display: flex;
+  /* Elementos en línea */
+  justify-content: end;
+  /* Centrado horizontal */
+  gap: 12px;
+  /* Espaciado entre elementos */
+  color: #ffffff;
+}
+
+.container {
+  display: flex;
+  /* Elementos en línea */
+  flex-wrap: nowrap;
+  /* Asegura que los elementos se envuelvan */
+  justify-content: center;
+  /* Centrado horizontal */
+  gap: 12px;
+  /* Espaciado entre elementos */
+  margin-top: 1rem;
+  /* Espaciado superior */
+  margin-bottom: 1rem;
+  /* Espaciado inferior */
+  padding: 1.5rem;
+  /* Espaciado interno */
+  /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
+  background: white;
+  /* Fondo claro por defecto */
+  margin: 0 auto;
+  /* Centrado */
+  max-width: 100%;
+  /* Ancho máximo */
+
+}
+
+.container-conversor,
+.contenedor-noticias,
+.container-bolivarDolarPesos,
+.container-valorDollar,
+.container-factores {
+  width: 100%;
+  /* Espaciado proporcional */
+  margin: 0 auto;
+  /* Espaciado interno proporcional */
+  padding: 1.5rem;
+  /* Sombra */
+  /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
+  /* Fondo claro por defecto */
+  background: white;
+  /* border */
+  border: 1px solid #ccc;
+}
+
+body.dark-mode .date-time {
+  /* Fondo oscuro */
+  /* background: #1e1e1e; */
+  border: none;
+  /* Borde más suave */
+}
+
+body.dark-mode .container,
+body.dark-mode .container-conversor,
+body.dark-mode .contenedor-noticias,
+body.dark-mode .container-valorDollar,
+body.dark-mode .container-bolivarDolarPesos,
+body.dark-mode .container-factores {
+  /* Fondo oscuro */
+  background: #1e1e1e;
+  /* Borde más suave */
+  border: 1px solid #333;
+}
+
+body.dark-mode hr {
+  background: #ccc;
+}
+
+
+/* Estilos de encabezado */
+hr {
+  margin: 1rem 0;
+  /* Espaciado uniforme */
+}
+
+h1 {
+  text-align: start;
+  align-items: center;
+  /* font-size: 2rem;  */
+  /* Tamaño de fuente proporcional */
+}
+
+h2 {
+  margin: 1rem 0;
+  /* Espaciado uniforme */
+}
+
+h3 {
+  margin: 1rem 0;
+  /* Espaciado uniforme */
+}
+
+h4 {
+  margin: 1rem 0;
+  /* Espaciado uniforme */
+}
+
+h5 {
+  margin: 1rem 0;
+  /* Espaciado uniforme */
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  /* Tamaño de fuente proporcional */
+}
+
+/* Formulario */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input,
+select {
+  /* Campos de entrada ocupan todo el ancho */
+  width: 100%;
+  margin: 0.5rem 0;
+  /* Espaciado uniforme */
+  padding: 0.75rem;
+  /* Espaciado interno */
+  border: 1px solid #ccc;
+  /* Borde más suave */
+  border-radius: 5px;
+  /* Bordes redondeados */
+  transition: border-color 0.3s;
+  /* Transición para el borde */
+}
+button {
+  width: 100%;
+  background-color: #007bff;
+  /* Color del botón */
+  color: white;
+  /* Texto del botón */
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  /* Transición suave */
+}
+
+button:hover {
+  background-color: #0056b3;
+  /* Color del botón al pasar el mouse */
+  transform: translateY(-2px);
+  /* Efecto de elevación */
+}
+
+input:focus,
+select:focus {
+  /* Color de borde al enfocar */
+  /* border-color: #007bff;  */
+  outline: none;
+  /* Sin contorno por defecto */
+}
+
+#result,
+#history-list {
+  border: none;
+  padding: 0.75rem;
+  /* Espaciado interno */
+  background-color: #fff;
+  color: #000;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  /* Transición para el color de fondo */
+}
+
+/* Botones */
+#theme-toggle {
+  margin: 0 auto;
+  background-color: #333;
+  /* Fondo del botón */
+  color: white;
+  /* Texto del botón */
+  border: none;
+  font-size: 1rem;
+  /* Tamaño de fuente proporcional */
+  padding: 1rem;
+  /* Espaciado interno */
+}
+
+button {
+  width: 100%;
+  background-color: #007bff;
+  /* Color del botón */
+  color: white;
+  /* Texto del botón */
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  /* Transición suave */
+}
+
+button:hover {
+  background-color: #0056b3;
+  /* Color del botón al pasar el mouse */
+  transform: translateY(-2px);
+  /* Efecto de elevación */
+}
+
+/* Estilos adicionales */
+#history {
+  margin-top: 1rem;
+  /* Espaciado superior */
+}
+
+#history-list {
+  list-style-type: none;
+  /* Sin viñetas */
+  padding: 0;
+  /* Sin padding */
+}
+
+footer {
+
+/* Alineación a la derecha */
+text-align: end;
+/* Mejora la legibilidad */
+line-height: 2;
+/* Fondo oscuro */
+background-color: #333;
+/* Texto claro */
+color: #ffffff;
+}
+
+/* Estilos de modo oscuro para botones */
+body.dark-mode button {
+  background-color: #3a3a3a;
+  /* Color del botón en modo oscuro */
+  color: #ffffff;
+}
+
+body.dark-mode button:hover {
+  background-color: #4a4a4a;
+  /* Color del botón al pasar el mouse en modo oscuro */
+}
+
+#resultado,
+#resultadoBcv {
+  font-weight: bold;
+  /* Negrita */
+}
+
+table {
+  width: 100%;
+  /* Tabla ocupa todo el ancho */
+  border-collapse: collapse;
+  /* Colapsar bordes */
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  /* Bordes suaves */
+  padding: 0.5rem;
+  /* Espaciado interno */
+  text-align: center;
+  /* Alineación centrada */
+}
+
+th {
+  background-color: #f2f2f2;
+  /* Fondo de encabezado */
+}
+
+.gradient-info {
+  background: linear-gradient(45deg, #17a2b8, #0dcaf0); /* Colores de info */
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: start;
+}
+
+.gradient-success {
+  background: linear-gradient(45deg, #28a745, #85e89e); /* Colores de success */
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: start;
+}
+
+/* Media query para pantallas de 1000px o menos */
+@media only screen and (max-width: 1000px) {
+  html {
+    font-size: calc(var(--font-size-base) * 0.9);
+    /* Ajuste de tamaño de fuente */
+
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    /* Ajuste para pantallas pequeñas */
+  }
+
+  .container {
+    flex-direction: column;
+    /* Apilado vertical */
+    padding: 0;
+    /* Sin padding */
+    margin: 0;
+    /* Sin margen */
+  }
+
+}
+
+/* Media query para pantallas de 500px o menos */
+@media only screen and (max-width: 500px) {
+  html {
+    font-size: calc(var(--font-size-base) * 0.8);
+    /* Ajuste de tamaño de fuente */
+  }
+
+}
