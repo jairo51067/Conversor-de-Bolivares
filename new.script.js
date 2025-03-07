@@ -31,7 +31,7 @@ document
       const conversionRate = await getConversionRate(fromCurrency, toCurrency);
       if (conversionRate) {
         const convertedAmount = (amount * conversionRate).toFixed(2);
-        resultParagraph.textContent = `${amount} ${fromCurrency} = ${convertedAmount} ${toCurrency}`;
+        resultParagraph.textContent = `${parseFloat(amount).toLocaleString('es-CO', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} ${fromCurrency} = ${parseFloat(convertedAmount).toLocaleString('es-CO', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} ${toCurrency}`;
         addToHistory(amount, fromCurrency, convertedAmount, toCurrency); // Agregar al historial
       } else {
         resultParagraph.textContent =
@@ -105,7 +105,7 @@ async function getConversionRate(from, to) {
 
   try {
     const response = await fetch(apiUrl);
- if (!response.ok) {
+    if (!response.ok) {
       console.error(
         "Error en la respuesta de la API:",
         response.status,
@@ -129,28 +129,24 @@ async function getConversionRate(from, to) {
 // Función para agregar un elemento al historial de conversiones
 function addToHistory(amount, fromCurrency, convertedAmount, toCurrency) {
   const historyItem = document.createElement("li");
-  historyItem.textContent = `${amount} ${fromCurrency} = ${convertedAmount} ${toCurrency}`;
+  historyItem.textContent = `${parseFloat(amount).toLocaleString('es-CO', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} ${fromCurrency} = ${parseFloat(convertedAmount).toLocaleString('es-CO', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} ${toCurrency}`;
   historyList.appendChild(historyItem);
 }
 
-  // Lógica para mostrar y ocultar el conversor
-  document.getElementById("show-converter").addEventListener("click", function() {
-    document.getElementById("converter-container").style.display = "block";
-});
+// Mostrar el conversor al cargar la página
+window.onload = function() {
+  document.getElementById("converter-container").style.display = "block";
+};
 
-document.getElementById("close-converter").addEventListener("click", function() {
-    document.getElementById("converter-container").style.display = "none";
-});
-
-// Lógica para mostrar y ocultar el conversor
+// Lógica para mostrar el conversor (no se usará después de cerrarlo)
 document.getElementById("show-converter").addEventListener("click", function() {
   document.getElementById("converter-container").style.display = "block";
 });
 
+// Lógica para ocultar el conversor
 document.getElementById("close-converter").addEventListener("click", function() {
   document.getElementById("converter-container").style.display = "none";
 });
-
 
 // TODO: Dolar BCV
 // Función para obtener datos de la nueva API
@@ -293,11 +289,11 @@ document.addEventListener("DOMContentLoaded", function () {
   obtenerDatos();
 });
 
-
 // TODO: Obtener el valor del dolar y los factores de conversion entre Dolar Pesos y Bolivares
 // TODO: Valores del dolar
 // *** Valor del dolar en pesos colombianos TRM
 let valorDolarEnCOP;
+
 async function obtenerValorDolarEnCOP() {
   const url = "https://api.exchangerate-api.com/v4/latest/USD";
 
@@ -311,9 +307,9 @@ async function obtenerValorDolarEnCOP() {
     valorDolarEnCOP = datos.rates.COP;
 
     // Mostrar el valor en el elemento HTML
-    document.getElementById(
-      "valorDolar"
-    ).textContent = `El valor del dólar en pesos colombianos es: ${valorDolarEnCOP}`;
+    document.getElementById("valorDolar").innerHTML = 
+      `El precio dólar en Colombia es: <span class="estiloDolar"> <br> ${valorDolarEnCOP} $</span>`;
+    
     calcularFactores(); // Llamar a la función para calcular factores
   } catch (error) {
     console.error("Error:", error);
@@ -375,7 +371,6 @@ async function obtenerValorDolarParalelo() {
   }
 }
 
-
 // TODO Factores de conversión
 let factorBCV; // Variable global para factorBCV
 let factorParalelo; // Variable global para factorParalelo
@@ -384,12 +379,12 @@ let factorParalelo; // Variable global para factorParalelo
 function calcularFactores() {
   if (valorDolarEnCOP && valorDolarEnVES) {
     factorBCV = (valorDolarEnCOP / valorDolarEnVES).toFixed(2); // Asignamos el valor a factorBCV
-    document.getElementById("factorBCV").textContent = `Factor (COP/BCV): ${factorBCV}`;
+    document.getElementById("factorBCV").innerHTML = `Factor (TRM_COP/BCV): <span class="estiloFactor"> <br> ${factorBCV}</span>`;
   }
 
   if (valorDolarEnCOP && valorDolarParalelo) {
     factorParalelo = (valorDolarEnCOP / valorDolarParalelo).toFixed(2); // Asignamos el valor a factorParalelo
-    document.getElementById("factorParalelo").textContent = `Factor (COP/Paralelo): ${factorParalelo}`;
+    document.getElementById("factorParalelo").innerHTML = `Factor (TRM_COP/Paralelo): <span class="estiloFactor"> <br> ${factorParalelo}</span>`;
   }
 
   // Aquí puedes usar factorBCV y factorParalelo como necesites
@@ -408,32 +403,41 @@ window.onload = function () {
 
 // TODO Función para convertir bolívares a pesos
 function convertirBolivares() {
-    const bolivares = parseFloat(document.getElementById("bolivaresInput").value);
-    if (!isNaN(bolivares)) {
-        const resultadoBCV = (bolivares * factorBCV).toFixed(2);
-        const resultadoParalelo = (bolivares * factorParalelo).toFixed(2);
-        document.getElementById("resultadoBCV").textContent = `bcv: ${resultadoBCV} Pesos`;
-        document.getElementById("resultadoParalelo").textContent = `paralelo: ${resultadoParalelo} Pesos`;
-    } else {
-        document.getElementById("resultadoBCV").textContent = `bcv: `;
-        document.getElementById("resultadoParalelo").textContent = `paralelo: `;
-    }
+  const bolivares = parseFloat(document.getElementById("bolivaresInput").value);
+  if (!isNaN(bolivares)) {
+      const resultadoBCV = (bolivares * factorBCV).toFixed(2);
+      const resultadoParalelo = (bolivares * factorParalelo).toFixed(2);
+      document.getElementById("resultadoBCV").textContent = `BCV: ${parseFloat(resultadoBCV).toLocaleString('es-CO', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} Pesos`;
+      document.getElementById("resultadoParalelo").textContent = `PARALELO: ${parseFloat(resultadoParalelo).toLocaleString('es-CO', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} Pesos`;
+  } else {
+      document.getElementById("resultadoBCV").textContent = `BCV: `;
+      document.getElementById("resultadoParalelo").textContent = `PARALELO: `;
+  }
 }
 
 // TODO Función para convertir pesos a bolívares
 function convertirPesos() {
-    const pesos = parseFloat(document.getElementById("pesosInput").value);
-    if (!isNaN(pesos)) {
-        const resultadoPesosBCV = (pesos / factorBCV).toFixed(2);
-        const resultadoPesosParalelo = (pesos / factorParalelo).toFixed(2);
-        document.getElementById("resultadoPesosBCV").textContent = `bcv: ${resultadoPesosBCV} Bolivares`;
-        document.getElementById("resultadoPesosParalelo").textContent = `paralelo: ${resultadoPesosParalelo} Bolivares`;
-    } else {
-        document.getElementById("resultadoPesosBCV").textContent = `bcv: `;
-        document.getElementById("resultadoPesosParalelo").textContent = `paralelo: `;
-    }
+  const pesos = parseFloat(document.getElementById("pesosInput").value);
+  if (!isNaN(pesos)) {
+      const resultadoPesosBCV = (pesos / factorBCV).toFixed(2);
+      const resultadoPesosParalelo = (pesos / factorParalelo).toFixed(2);
+      document.getElementById("resultadoPesosBCV").textContent = `BCV: ${parseFloat(resultadoPesosBCV).toLocaleString('es-CO', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} Bolivares`;
+      document.getElementById("resultadoPesosParalelo").textContent = `PARALELO: ${parseFloat(resultadoPesosParalelo).toLocaleString('es-CO', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} Bolivares`;
+  } else {
+      document.getElementById("resultadoPesosBCV").textContent = `BCV: `;
+      document.getElementById("resultadoPesosParalelo").textContent = `PARALELO: `;
+  }
 }
 
+// Función para resetear los cálculos
+function resetearCalculos() {
+  document.getElementById("bolivaresInput").value = '';
+  document.getElementById("pesosInput").value = '';
+  document.getElementById("resultadoBCV").textContent = `BCV: `;
+  document.getElementById("resultadoParalelo").textContent = `PARALELO: `;
+  document.getElementById("resultadoPesosBCV").textContent = `BCV: `;
+  document.getElementById("resultadoPesosParalelo").textContent = `PARALELO: `;
+}
 
 // TODO: Cambio de Tema
 // Elementos del DOM
@@ -481,7 +485,3 @@ function updateDateTime() {
 
 setInterval(updateDateTime, 1000);
 updateDateTime();
-
-
-
-

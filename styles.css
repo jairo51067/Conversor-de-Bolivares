@@ -38,15 +38,35 @@ body.dark-mode {
 }
 
 header {
-  background-color: #333;
-  /* Fondo oscuro */
-  color: #ffffff;
-  /* Texto claro */
-    display: flex;
-  /* Espacio entre elementos */
-  justify-content: space-between;
-  /* Centrado vertical */
-  align-items: center;
+  background-color: #333; /* Fondo oscuro */
+  padding: 1rem; /* Espaciado interno */
+  display: flex; /* Elementos en línea */
+  justify-content: space-between; /* Alinear los elementos en la línea horizontal */
+  align-items: center; /* Alinear los elementos en la línea vertical */
+}
+
+header h1 {
+  margin: 0; /* Eliminar márgenes por defecto */
+  font-size: 1.5rem; /* Tamaño de fuente más grande */
+  font-weight: bold; /* Negrita para el título */
+}
+
+header .btn {
+  background-color: #f8f9fa; /* Color de fondo del botón */
+  color: #333; /* Color del texto del botón */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Bordes redondeados */
+  transition: background-color 0.3s; /* Transición suave para el fondo */
+}
+
+/* Efecto al pasar el ratón sobre el botón */
+header .btn:hover {
+  background-color: #e2e6ea; /* Color de fondo más oscuro al pasar el ratón */
+}
+
+/* Estilo para el icono del tema */
+#theme-icon {
+  margin-left: 5px; /* Espaciado a la izquierda del icono */
 }
 
 /* Contenedores */
@@ -55,9 +75,12 @@ header {
   /* Elementos en línea */
   justify-content: end;
   /* Centrado horizontal */
+  align-items: center;
   gap: 12px;
   /* Espaciado entre elementos */
-  color: #ffffff;
+  color: black;
+  /* Texto oscuro */
+  
 }
 
 .container {
@@ -82,8 +105,8 @@ header {
   /* Centrado */
   max-width: 100%;
   /* Ancho máximo */
-
 }
+
 
 .container-conversor,
 .contenedor-noticias,
@@ -94,20 +117,26 @@ header {
   /* Espaciado proporcional */
   margin: 0 auto;
   /* Espaciado interno proporcional */
-  padding: 1.5rem;
+  padding: 5%;
   /* Sombra */
   /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
   /* Fondo claro por defecto */
   background: white;
   /* border */
-  border: 1px solid #ccc;
+  /* border: 1px solid #ccc; */
+}
+
+.container-conversor{
+  border: none;
 }
 
 body.dark-mode .date-time {
+  /* background-color: #333; */
   /* Fondo oscuro */
-  /* background: #1e1e1e; */
   border: none;
   /* Borde más suave */
+  color: #000000;
+  
 }
 
 body.dark-mode .container,
@@ -119,13 +148,21 @@ body.dark-mode .container-factores {
   /* Fondo oscuro */
   background: #1e1e1e;
   /* Borde más suave */
-  border: 1px solid #333;
+  /* border: 1px solid #f7f5f5; */
+  border: none;
+  padding: 5%;
 }
 
-body.dark-mode hr {
+/* body.dark-mode hr {
   background: #ccc;
-}
+} */
 
+.subtitulo {
+  font-size: 0.8em; /* Tamaño de fuente más pequeño */
+  color: #888; /* Color gris para un efecto disimulado */
+  
+  opacity: 0.7; /* Opacidad para un efecto más elegante */
+}
 
 /* Estilos de encabezado */
 hr {
@@ -173,21 +210,55 @@ form {
   flex-direction: column;
 }
 
+/* Estilos generales para los campos de entrada */
 input,
 select {
-  /* Campos de entrada ocupan todo el ancho */
-  width: 100%;
-  margin: 0.5rem 0;
-  /* Espaciado uniforme */
-  padding: 0.75rem;
-  /* Espaciado interno */
-  border: 1px solid #ccc;
-  /* Borde más suave */
-  border-radius: 5px;
-  /* Bordes redondeados */
-  transition: border-color 0.3s;
-  /* Transición para el borde */
+  width: 100%; /* Campos de entrada ocupan todo el ancho */
+  margin: 0.5rem 0; /* Espaciado uniforme */
+  padding: 0.75rem; /* Espaciado interno */
+  border: 1px solid #ccc; /* Borde más suave */
+  border-radius: 5px; /* Bordes redondeados */
+  transition: border-color 0.3s, box-shadow 0.3s; /* Transición para el borde y sombra */
+  font-size: 1rem; /* Tamaño de fuente */
+  background-color: #f9f9f9; /* Color de fondo suave */
 }
+
+/* Efecto de enfoque */
+input:focus,
+select:focus {
+  border-color: #007bff; /* Color del borde al enfocar */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Sombra al enfocar */
+  outline: none; /* Eliminar el contorno predeterminado */
+}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 500px) {
+  input,
+  select {
+    padding: 1rem; /* Aumentar el espaciado interno en móviles */
+    font-size: 1.1rem; /* Aumentar el tamaño de fuente en móviles */
+    border-radius: 10px; /* Bordes más redondeados en móviles */
+    background-color: #e9ecef; /* Color de fondo más claro en móviles */
+  }
+}
+
+/* Estilo para el contenedor de los campos */
+.field-container {
+  margin: 1rem 0; /* Espaciado entre campos */
+  padding: 1rem; /* Espaciado interno del contenedor */
+  border: 1px solid #ddd; /* Borde del contenedor */
+  border-radius: 10px; /* Bordes redondeados del contenedor */
+  background-color: #ffffff; /* Fondo blanco para el contenedor */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave para el contenedor */
+}
+
+/* Estilo para etiquetas */
+label {
+  font-weight: bold; /* Negrita para las etiquetas */
+  margin-bottom: 0.5rem; /* Espaciado inferior */
+  display: block; /* Asegura que la etiqueta esté en una nueva línea */
+}
+
 button {
   width: 100%;
   background-color: #007bff;
@@ -206,13 +277,6 @@ button:hover {
   /* Efecto de elevación */
 }
 
-input:focus,
-select:focus {
-  /* Color de borde al enfocar */
-  /* border-color: #007bff;  */
-  outline: none;
-  /* Sin contorno por defecto */
-}
 
 #result,
 #history-list {
@@ -249,6 +313,7 @@ button {
   cursor: pointer;
   transition: background-color 0.3s, transform 0.2s;
   /* Transición suave */
+  
 }
 
 button:hover {
@@ -271,16 +336,59 @@ button:hover {
   /* Sin padding */
 }
 
-footer {
+.estiloDolar {
+  color: green; /* Cambia el color del texto */
+  font-weight: bold; /* Hace el texto más grueso */
+  font-size: 1.5em; /* Aumenta el tamaño de la fuente */
+}
 
-/* Alineación a la derecha */
-text-align: end;
-/* Mejora la legibilidad */
-line-height: 2;
-/* Fondo oscuro */
-background-color: #333;
-/* Texto claro */
-color: #ffffff;
+.estiloFactor {
+  color: blue; /* Cambia el color del texto */
+  font-weight: bold; /* Hace el texto más grueso */
+  font-size: 1.5em; /* Aumenta el tamaño de la fuente */
+}
+
+footer {
+  /* Alineación a la derecha */
+  text-align: right;
+  /* Mejora la legibilidad */
+  line-height: 1.5;
+  /* Fondo oscuro */
+  background-color: #333;
+  /* Texto claro */
+  color: #ffffff;
+  /* Espaciado interno */
+  padding: 20px;
+  /* Sombra suave para dar profundidad */
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
+  /* Espaciado en la parte superior */
+  margin-top: 20px;
+}
+
+/* Estilo para el párrafo */
+footer p {
+  margin: 0; /* Eliminar márgenes por defecto */
+  font-size: 0.9rem; /* Tamaño de fuente más pequeño */
+}
+
+/* Estilo para el encabezado */
+footer h5 {
+  margin: 0.5rem 0; /* Espaciado superior e inferior */
+  font-size: 1rem; /* Tamaño de fuente */
+  font-weight: 600; /* Negrita */
+}
+
+/* Estilo para el enlace */
+footer a {
+  color: #00bfff; /* Color del enlace */
+  text-decoration: none; /* Sin subrayado */
+  transition: color 0.3s; /* Transición suave para el color */
+}
+
+/* Efecto al pasar el ratón sobre el enlace */
+footer a:hover {
+  color: #ffcc00; /* Color del enlace al pasar el ratón */
+  text-decoration: underline; /* Subrayar al pasar el ratón */
 }
 
 /* Estilos de modo oscuro para botones */
@@ -355,7 +463,7 @@ th {
   .container {
     flex-direction: column;
     /* Apilado vertical */
-    padding: 0;
+    padding: 0.7rem;
     /* Sin padding */
     margin: 0;
     /* Sin margen */
@@ -371,3 +479,5 @@ th {
   }
 
 }
+
+
