@@ -38,35 +38,50 @@ body.dark-mode {
 }
 
 header {
-  background-color: #333; /* Fondo oscuro */
-  padding: 1rem; /* Espaciado interno */
-  display: flex; /* Elementos en línea */
-  justify-content: space-between; /* Alinear los elementos en la línea horizontal */
-  align-items: center; /* Alinear los elementos en la línea vertical */
+  background-color: #333;
+  /* Fondo oscuro */
+  padding: 1rem;
+  /* Espaciado interno */
+  display: flex;
+  /* Elementos en línea */
+  justify-content: space-between;
+  /* Alinear los elementos en la línea horizontal */
+  align-items: center;
+  /* Alinear los elementos en la línea vertical */
 }
 
 header h1 {
-  margin: 0; /* Eliminar márgenes por defecto */
-  font-size: 1.5rem; /* Tamaño de fuente más grande */
-  font-weight: bold; /* Negrita para el título */
+  margin: 0;
+  /* Eliminar márgenes por defecto */
+  font-size: 1.5rem;
+  /* Tamaño de fuente más grande */
+  font-weight: bold;
+  /* Negrita para el título */
 }
 
 header .btn {
-  background-color: #f8f9fa; /* Color de fondo del botón */
-  color: #333; /* Color del texto del botón */
-  border: none; /* Sin borde */
-  border-radius: 5px; /* Bordes redondeados */
-  transition: background-color 0.3s; /* Transición suave para el fondo */
+  background-color: #f8f9fa;
+  /* Color de fondo del botón */
+  color: #333;
+  /* Color del texto del botón */
+  border: none;
+  /* Sin borde */
+  border-radius: 5px;
+  /* Bordes redondeados */
+  transition: background-color 0.3s;
+  /* Transición suave para el fondo */
 }
 
 /* Efecto al pasar el ratón sobre el botón */
 header .btn:hover {
-  background-color: #e2e6ea; /* Color de fondo más oscuro al pasar el ratón */
+  background-color: #e2e6ea;
+  /* Color de fondo más oscuro al pasar el ratón */
 }
 
 /* Estilo para el icono del tema */
 #theme-icon {
-  margin-left: 5px; /* Espaciado a la izquierda del icono */
+  margin-left: 5px;
+  /* Espaciado a la izquierda del icono */
 }
 
 /* Contenedores */
@@ -80,7 +95,7 @@ header .btn:hover {
   /* Espaciado entre elementos */
   color: black;
   /* Texto oscuro */
-  
+
 }
 
 .container {
@@ -90,7 +105,7 @@ header .btn:hover {
   /* Asegura que los elementos se envuelvan */
   justify-content: center;
   /* Centrado horizontal */
-  gap: 12px;
+  gap: 1rem;
   /* Espaciado entre elementos */
   margin-top: 1rem;
   /* Espaciado superior */
@@ -117,7 +132,7 @@ header .btn:hover {
   /* Espaciado proporcional */
   margin: 0 auto;
   /* Espaciado interno proporcional */
-  padding: 5%;
+  padding: 1rem;
   /* Sombra */
   /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
   /* Fondo claro por defecto */
@@ -126,7 +141,7 @@ header .btn:hover {
   /* border: 1px solid #ccc; */
 }
 
-.container-conversor{
+.container-conversor {
   border: none;
 }
 
@@ -136,7 +151,7 @@ body.dark-mode .date-time {
   border: none;
   /* Borde más suave */
   color: #000000;
-  
+
 }
 
 body.dark-mode .container,
@@ -150,25 +165,21 @@ body.dark-mode .container-factores {
   /* Borde más suave */
   /* border: 1px solid #f7f5f5; */
   border: none;
-  padding: 5%;
+  /* padding: 5%; */
 }
 
-/* body.dark-mode hr {
-  background: #ccc;
-} */
 
 .subtitulo {
-  font-size: 0.8em; /* Tamaño de fuente más pequeño */
-  color: #888; /* Color gris para un efecto disimulado */
-  
-  opacity: 0.7; /* Opacidad para un efecto más elegante */
+  font-size: 0.8em;
+  /* Tamaño de fuente más pequeño */
+  color: #888;
+  /* Color gris para un efecto disimulado */
+
+  opacity: 0.7;
+  /* Opacidad para un efecto más elegante */
 }
 
-/* Estilos de encabezado */
-hr {
-  margin: 1rem 0;
-  /* Espaciado uniforme */
-}
+
 
 h1 {
   text-align: start;
@@ -213,50 +224,61 @@ form {
 /* Estilos generales para los campos de entrada */
 input,
 select {
-  width: 100%; /* Campos de entrada ocupan todo el ancho */
-  margin: 0.5rem 0; /* Espaciado uniforme */
-  padding: 0.75rem; /* Espaciado interno */
-  border: 1px solid #ccc; /* Borde más suave */
-  border-radius: 5px; /* Bordes redondeados */
-  transition: border-color 0.3s, box-shadow 0.3s; /* Transición para el borde y sombra */
-  font-size: 1rem; /* Tamaño de fuente */
-  background-color: #f9f9f9; /* Color de fondo suave */
+  width: 100%;
+  /* Campos de entrada ocupan todo el ancho */
+  margin: 0.5rem 0;
+  /* Espaciado uniforme */
+  padding: 0.75rem;
+  /* Espaciado interno */
+  border: 1px solid #ccc;
+  /* Borde más suave */
+  border-radius: 5px;
+  /* Bordes redondeados */
+  transition: border-color 0.3s, box-shadow 0.3s;
+  /* Transición para el borde y sombra */
+  font-size: 2rem;
+  /* Tamaño de fuente */
+  background-color: #f9f9f9;
+  /* Color de fondo suave */
 }
 
 /* Efecto de enfoque */
 input:focus,
 select:focus {
-  border-color: #007bff; /* Color del borde al enfocar */
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Sombra al enfocar */
-  outline: none; /* Eliminar el contorno predeterminado */
+  border-color: #007bff;
+  /* Color del borde al enfocar */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  /* Sombra al enfocar */
+  outline: none;
+  /* Eliminar el contorno predeterminado */
 }
 
-/* Estilos para dispositivos móviles */
-@media (max-width: 500px) {
-  input,
-  select {
-    padding: 1rem; /* Aumentar el espaciado interno en móviles */
-    font-size: 1.1rem; /* Aumentar el tamaño de fuente en móviles */
-    border-radius: 10px; /* Bordes más redondeados en móviles */
-    background-color: #e9ecef; /* Color de fondo más claro en móviles */
-  }
-}
+
 
 /* Estilo para el contenedor de los campos */
 .field-container {
-  margin: 1rem 0; /* Espaciado entre campos */
-  padding: 1rem; /* Espaciado interno del contenedor */
-  border: 1px solid #ddd; /* Borde del contenedor */
-  border-radius: 10px; /* Bordes redondeados del contenedor */
-  background-color: #ffffff; /* Fondo blanco para el contenedor */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave para el contenedor */
+  margin: 1rem 0;
+  /* Espaciado entre campos */
+  padding: 1rem;
+  /* Espaciado interno del contenedor */
+  border: 1px solid #ddd;
+  /* Borde del contenedor */
+  border-radius: 10px;
+  /* Bordes redondeados del contenedor */
+  background-color: #ffffff;
+  /* Fondo blanco para el contenedor */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  /* Sombra suave para el contenedor */
 }
 
 /* Estilo para etiquetas */
 label {
-  font-weight: bold; /* Negrita para las etiquetas */
-  margin-bottom: 0.5rem; /* Espaciado inferior */
-  display: block; /* Asegura que la etiqueta esté en una nueva línea */
+  font-weight: bold;
+  /* Negrita para las etiquetas */
+  margin-bottom: 0.5rem;
+  /* Espaciado inferior */
+  display: block;
+  /* Asegura que la etiqueta esté en una nueva línea */
 }
 
 button {
@@ -313,7 +335,7 @@ button {
   cursor: pointer;
   transition: background-color 0.3s, transform 0.2s;
   /* Transición suave */
-  
+
 }
 
 button:hover {
@@ -337,15 +359,21 @@ button:hover {
 }
 
 .estiloDolar {
-  color: green; /* Cambia el color del texto */
-  font-weight: bold; /* Hace el texto más grueso */
-  font-size: 1.5em; /* Aumenta el tamaño de la fuente */
+  color: green;
+  /* Cambia el color del texto */
+  font-weight: bold;
+  /* Hace el texto más grueso */
+  font-size: 1.5em;
+  /* Aumenta el tamaño de la fuente */
 }
 
 .estiloFactor {
-  color: blue; /* Cambia el color del texto */
-  font-weight: bold; /* Hace el texto más grueso */
-  font-size: 1.5em; /* Aumenta el tamaño de la fuente */
+  color: blue;
+  /* Cambia el color del texto */
+  font-weight: bold;
+  /* Hace el texto más grueso */
+  font-size: 1.5em;
+  /* Aumenta el tamaño de la fuente */
 }
 
 footer {
@@ -367,28 +395,38 @@ footer {
 
 /* Estilo para el párrafo */
 footer p {
-  margin: 0; /* Eliminar márgenes por defecto */
-  font-size: 0.9rem; /* Tamaño de fuente más pequeño */
+  margin: 0;
+  /* Eliminar márgenes por defecto */
+  font-size: 0.9rem;
+  /* Tamaño de fuente más pequeño */
 }
 
 /* Estilo para el encabezado */
 footer h5 {
-  margin: 0.5rem 0; /* Espaciado superior e inferior */
-  font-size: 1rem; /* Tamaño de fuente */
-  font-weight: 600; /* Negrita */
+  margin: 0.5rem 0;
+  /* Espaciado superior e inferior */
+  font-size: 1rem;
+  /* Tamaño de fuente */
+  font-weight: 600;
+  /* Negrita */
 }
 
 /* Estilo para el enlace */
 footer a {
-  color: #00bfff; /* Color del enlace */
-  text-decoration: none; /* Sin subrayado */
-  transition: color 0.3s; /* Transición suave para el color */
+  color: #00bfff;
+  /* Color del enlace */
+  text-decoration: none;
+  /* Sin subrayado */
+  transition: color 0.3s;
+  /* Transición suave para el color */
 }
 
 /* Efecto al pasar el ratón sobre el enlace */
 footer a:hover {
-  color: #ffcc00; /* Color del enlace al pasar el ratón */
-  text-decoration: underline; /* Subrayar al pasar el ratón */
+  color: #ffcc00;
+  /* Color del enlace al pasar el ratón */
+  text-decoration: underline;
+  /* Subrayar al pasar el ratón */
 }
 
 /* Estilos de modo oscuro para botones */
@@ -432,7 +470,8 @@ th {
 }
 
 .gradient-info {
-  background: linear-gradient(45deg, #17a2b8, #0dcaf0); /* Colores de info */
+  background: linear-gradient(45deg, #17a2b8, #0dcaf0);
+  /* Colores de info */
   color: white;
   padding: 15px;
   border-radius: 8px;
@@ -440,7 +479,8 @@ th {
 }
 
 .gradient-success {
-  background: linear-gradient(45deg, #28a745, #85e89e); /* Colores de success */
+  background: linear-gradient(45deg, #28a745, #85e89e);
+  /* Colores de success */
   color: white;
   padding: 15px;
   border-radius: 8px;
@@ -472,12 +512,24 @@ th {
 }
 
 /* Media query para pantallas de 500px o menos */
+/* Estilos para dispositivos móviles */
 @media only screen and (max-width: 500px) {
   html {
     font-size: calc(var(--font-size-base) * 0.8);
     /* Ajuste de tamaño de fuente */
   }
 
-}
+  input,
+  select {
+    padding: 1rem;
+    /* Aumentar el espaciado interno en móviles */
+    font-size: 2rem;
+    /* Aumentar el tamaño de fuente en móviles */
+    border-radius: 10px;
+    /* Bordes más redondeados en móviles */
+    background-color: #e9ecef;
+    /* Color de fondo más claro en móviles */
+  }
 
+}
 
