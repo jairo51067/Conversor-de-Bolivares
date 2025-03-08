@@ -4,13 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <title>Calculadora de Monedas</title>
-    <link rel="shortcut icon" href="./src/assets/android-chrome-512x512.png" type="image/x-icon">
+    <meta name="description" content="Calculadora de Monedas para convertir Bolívares, Dólares, Euros y Pesos Colombianos. Obtén tasas de cambio actualizadas y realiza conversiones fácilmente.">
+    <meta name="keywords" content="calculadora, monedas, bolívares, dólares, euros, pesos, conversor, tasas de cambio">
+    <meta name="author" content="Jairo Cárdenas">
+    <meta property="og:title" content="Calculadora de Monedas">
+    <meta property="og:description" content="Convierte Bolívares a Dólares, Euros y Pesos Colombianos con tasas de cambio actualizadas.">
+    <link rel="shortcut icon" href="./src/assets/android-chrome-192x192.png" type="image/x-icon">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Calculadora de Monedas</title>
 </head>
 
 <body>
@@ -27,7 +31,7 @@
 
     <!-- TODO Fecha y Hora -->
     <div class="bg-white d-flex justify-content-between align-items-center p-0">
-        <img src="./src/assets/flags_vzla.png" style="width: 70px; height: 60px;" alt="Bandera de Venezuela">
+        <img src="./src/assets/flags_vzla.png" alt="Bandera de Venezuela">
         <div class="date-time">
             <div id="current-date" class="text-black" style="font-weight: 600;">Fecha: <span id="date">date</span></div>
             <div id="current-time" class="text-black" style="font-weight: 800;">Hora: <span id="time">time</span></div>
@@ -69,12 +73,12 @@
                 </form>
                 <hr>
                 <div>
-                    <h3>Resultado</h3>
+                    <h2>Resultado</h2>
                     <p id="result"></p>
                 </div>
                 <hr>
                 <div id="history">
-                    <h3>Historial de Conversiones</h3>
+                    <h2>Historial de Conversiones</h2>
                     <ul id="history-list"></ul>
                 </div>
                 <button id="close-converter" class="btn btn-danger" style="font-weight: 700;">Cerrar Conversor</button>
@@ -137,7 +141,7 @@
             </div>
             <hr>
             <div>
-                <h4 class="subtitulo">Dólar Colombia, TRM.</h4>
+                <p class="subtitulo">Dólar Colombia, TRM.</p>
                 <div id="valorDolar" style="font-size: 21px; font-weight: 700; text-align: center;">Cargando...</div>
             </div>
             <hr>
@@ -203,7 +207,7 @@
                     <input type="number" id="pesosInput" class="form-control" placeholder="Ingrese cantidad en pesos"
                         oninput="convertirPesos()">
                     <div class="gradient-info" id="resultadoPesos" style="margin-top: 10px;">
-                        <h3>Resultados:</h3>
+                        <h2>Resultados:</h2>
                         <div style="font-size: 22px; color: black; font-weight: 700;" id="resultadoPesosBCV">BCV: </div>
                         <br>
                         <div style="font-size: 22px; color: black; font-weight: 700;" id="resultadoPesosParalelo">
@@ -218,9 +222,9 @@
 
     <footer class="text-right p-3">
         <p>©2024 Conversor de bolivares. - Todos los derechos reservados.</p>
-        <h5>Author: Jairo Cárdenas<br>
+        <p>Author: Jairo Cárdenas<br>
             <a href="mailto:jairo.cardenas.dev@gmail.com">jairo.cardenas.dev@gmail.com</a>
-        </h5>
+        </p>
     </footer>
 
     <script src="new.script.js"></script>
