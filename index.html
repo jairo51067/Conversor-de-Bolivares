@@ -58,7 +58,7 @@
                     <div class="form-group">
                         <label for="amount">Cantidad a convertir:</label>
                         <input type="number" id="amount" class="form-control"
-                            placeholder="Ingrese la cantidad a convertir..." required>
+                            placeholder="Ingrese la cantidad a convertir..." required min="0" value="1" step="any">
                     </div>
                     <div class="form-group">
                         <label for="from">Moneda a convertir:</label>
@@ -78,7 +78,7 @@
                 <hr>
                 <div>
                     <h2>Resultado</h2>
-                    <p id="result"></p>
+                    <p id="result" class="estiloFactor"></p>
                 </div>
                 <hr>
                 <div id="history">
@@ -96,7 +96,7 @@
                 <strong>Valor del Dolar en Bolivares, fuentes del BCV y EnParaleloVzla.</strong>
             </div>
 
-            <div>
+            <div> 
                 <div class="d-flex align-items-center m-3">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_xcaRDP0KBd5uLuZiBwBcq5rrlE93l92vef5jI4ggBvCcMokp9Q-MXpsvkMEHSoq1fG0&usqp=CAU"
                         width="60px" height="60px" alt="Logo Banco Central de Venezuela" class="rounded-circle">

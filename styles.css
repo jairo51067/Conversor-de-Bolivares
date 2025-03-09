@@ -240,7 +240,7 @@ select {
   /* Tamaño de fuente */
   background-color: #f9f9f9;
   /* Color de fondo suave */
-}
+ }
 
 /* Efecto de enfoque */
 input:focus,
@@ -253,7 +253,14 @@ select:focus {
   /* Eliminar el contorno predeterminado */
 }
 
-
+.form-control{
+  height: 50px;
+  font-size: 21px;
+  font-style:normal;
+  font-weight: 500;
+  
+  line-height: 1.5;
+}
 
 /* Estilo para el contenedor de los campos */
 .field-container {
