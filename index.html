@@ -26,12 +26,12 @@
             <h1> Conversión de Bolívares</h1>
         </div>
 
-        <button id="theme-toggle" class="btn btn-light" style="width: auto; margin: 0 10px 0 0; padding: 1%;">
+        <button id="theme-toggle" class="btn btn-light" >
             Tema <i class="fas fa-sun" id="theme-icon"></i>
         </button>
     </header>
 
-    <div class="d-flex justify-content-between align-items-center p-3">
+    <div class="d-flex justify-content-between align-items-center px-3 pt-3">
         <!-- TODO imagen bandera vzl -->
         <!-- <img src="./src/assets/flags_vzla.png" alt="Bandera de Venezuela"> -->
         <!-- TODO Botón para mostrar el conversor -->
@@ -51,10 +51,12 @@
         <div id="converter-container" style="display: block; width: 100%;">
             <div class="container-conversor">
                  <!-- Alerta - Descripción  -->
-            <div class="alert alert-info field-container" role="alert">
-                <strong><h2>Convertidor.</h2></strong>
-                <p class="subtitulo">Convierte Bolívares a Dólares, Euros y Pesos Colombianos con tasas de cambio actualizadas.</p>
+            <div class="alert alert-info field-container" style="margin: 6px 0 0 0; padding: 3px 0 9px 10px ;" role="alert">
+                <strong><h2 class="">Convertidor.</h2></strong>
+                
             </div>
+            <hr>
+            <p class="subtitulo">Convierte Bolívares a Dólares, Euros y Pesos Colombianos con tasas de cambio actualizadas.</p>
                 <!-- <h2>Convertidor</h2> -->
                 <!-- <div class="subtitulo">Convierte dolares, euros, pesos colombianos y bolivares.</div> -->
                 <!-- <p><strong>Fuente:</strong> Exchange-Rates.org</p> -->
@@ -113,6 +115,7 @@
                 </div>
                 <hr>
                 <p class="subtitulo">Valores referenciales</p>
+                <hr>
                 <div id="resultadoBcv" style="font-size: 18px; font-weight: 700; text-align: center;">Cargando datos...
                 </div>
                 <button id="actualizar" class="btn btn-primary mt-3" style="font-weight: 700;">Actualizar Datos <i
@@ -130,6 +133,7 @@
                 </div>
                 <hr>
                 <p class="subtitulo">Valores referenciales</p>
+                <hr>
                 <div id="resultado" style="font-size: 18px; font-weight: 700; text-align: center;">Cargando datos...
                 </div>
                 <button onclick="obtenerDatos()" class="btn btn-primary mt-3" style="font-weight: 700;">Actualizar Datos
@@ -154,6 +158,7 @@
             <hr>
             <div>
                 <p class="subtitulo">Dólar Colombia, TRM.</p>
+                <hr>
                 <div id="valorDolar" style="font-size: 21px; font-weight: 700; text-align: center;">Cargando...</div>
             </div>
             <hr>
@@ -187,7 +192,7 @@
                 <div class="d-none" id="valorDolar"></div>
                 <div class="d-none" id="valorDolarBs"></div>
                 <div class="d-none" id="valorDolarParalelo"></div>
-                <hr>
+                
                 <div class="text-center" id="factorBCV" style="font-size: 21px; font-weight: 700; text-align: center;">
                 </div>
                 <div class="text-center" id="factorParalelo"

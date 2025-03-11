@@ -109,11 +109,11 @@ header .btn:hover {
   /* Centrado horizontal */
   gap: 1rem;
   /* Espaciado entre elementos */
-  margin-top: 1rem;
+  /* margin-top: 1rem; */
   /* Espaciado superior */
   margin-bottom: 1rem;
   /* Espaciado inferior */
-  padding: 1.5rem;
+  padding: 0 1.5rem;
   /* Espaciado interno */
   /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
   background: white;
@@ -323,7 +323,8 @@ button:hover {
 
 /* Botones */
 #theme-toggle {
-  margin: 0 auto;
+  width: auto;
+  margin: 0 0 0 auto;
   background-color: #333;
   /* Fondo del botón */
   color: white;
@@ -331,7 +332,7 @@ button:hover {
   border: none;
   font-size: 1rem;
   /* Tamaño de fuente proporcional */
-  padding: 1rem;
+  /* padding: 1rem; */
   /* Espaciado interno */
 }
 
