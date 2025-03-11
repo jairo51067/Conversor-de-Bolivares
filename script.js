@@ -148,103 +148,31 @@ document.getElementById("close-converter").addEventListener("click", function() 
   document.getElementById("converter-container").style.display = "none";
 });
 
-// TODO: Dolar BCV
-// Función para obtener datos de la nueva API
+
+
+// Variables globales para almacenar los precios
+let precioBcv = 0;
+let precioParalelo = 0;
+
 async function obtenerDatosBcv() {
   try {
-    const respuesta = await fetch(
-      "https://pydolarve.org/api/v1/dollar?page=bcv"
-    );
+    const respuesta = await fetch("https://pydolarve.org/api/v1/dollar?page=bcv");
     if (!respuesta.ok) {
-      const errorDetails = await respuesta.text(); // Obtener detalles del error
-      throw new Error(
-        "Error en la solicitud: " + respuesta.status + " - " + errorDetails
-      );
+      const errorDetails = await respuesta.text();
+      throw new Error("Error en la solicitud: " + respuesta.status + " - " + errorDetails);
     }
     const datos = await respuesta.json();
     console.log("Datos cargados:", datos);
     mostrarDatosBcv(datos);
   } catch (error) {
     console.error("Error al obtener datos de BCV:", error);
-    document.getElementById("resultadoBcv").textContent =
-      "Error al cargar los datos del Dólar BCV.";
+    document.getElementById("resultadoBcv").textContent = "Error al cargar los datos del Dólar BCV.";
   }
 }
 
-async function obtenerDatos() {
+async function obtenerDatosParalelo() {
   try {
-    const respuesta = await fetch(
-      "https://pydolarve.org/api/v1/dollar?monitor=enparalelovzla"
-    );
-    if (!respuesta.ok) {
-      const errorDetails = await respuesta.text(); // Obtener detalles del error
-      throw new Error(
-        "Error en la solicitud: " + respuesta.status + " - " + errorDetails
-      );
-    }
-    const datos = await respuesta.json();
-    console.log("Datos cargados:", datos);
-    mostrarDatos(datos);
-  } catch (error) {
-    console.error("Error al obtener datos del Dólar Paralelo:", error);
-    document.getElementById("resultado").textContent =
-      "Error al cargar los datos del Dólar Paralelo.";
-  }
-}
-
-function mostrarDatosBcv(datos) {
-  const contenedor = document.getElementById("resultadoBcv");
-  contenedor.innerHTML = ""; // Limpiar contenido anterior
-
-  // Crear una tabla para mostrar los datos
-  const tabla = document.createElement("table");
-  const encabezado = tabla.createTHead();
-  const filaEncabezado = encabezado.insertRow(0);
-
-  // Definir encabezados de la tabla
-  const encabezados = ["Última Actualización", "Precio (Bs)"];
-  encabezados.forEach((encabezado, index) => {
-    const celda = filaEncabezado.insertCell(index);
-    celda.innerHTML = `<strong>${encabezado}</strong>`;
-  });
-
-  // Agregar los datos a la tabla
-  const cuerpoTabla = tabla.createTBody();
-
-  // Verificar si la estructura de datos es correcta
-  if (datos && datos.monitors && datos.monitors.usd) {
-    const usdData = datos.monitors.usd;
-
-    // Crear una fila en la tabla para mostrar los datos de 'usd'
-    const filaDatos = cuerpoTabla.insertRow();
-    filaDatos.insertCell(0).innerText = usdData.last_update; // Última actualización
-    filaDatos.insertCell(1).innerText = usdData.price; // Precio
-  } else {
-    contenedor.textContent = "No se encontraron datos disponibles.";
-  }
-
-  // Agregar la tabla al contenedor
-  contenedor.appendChild(tabla);
-}
-
-// Agregar evento de clic al botón para actualizar datos
-document
-  .getElementById("actualizar")
-  .addEventListener("click", obtenerDatosBcv);
-
-// Llamar a la función al cargar el DOM
-document.addEventListener("DOMContentLoaded", function () {
-  obtenerDatos();
-  obtenerDatosBcv();
-});
-
-// TODO: Dolar Paralelo
-// Función para obtener datos de la API
-async function obtenerDatos() {
-  try {
-    const respuesta = await fetch(
-      "https://pydolarve.org/api/v1/dollar?monitor=enparalelovzla"
-    );
+    const respuesta = await fetch("https://pydolarve.org/api/v1/dollar?monitor=enparalelovzla");
     if (!respuesta.ok) {
       throw new Error("Error en la solicitud: " + respuesta.status);
     }
@@ -252,9 +180,25 @@ async function obtenerDatos() {
     console.log("Datos cargados:", datos);
     mostrarDatos(datos);
   } catch (error) {
-    console.error("Error:", error);
-    const contenedor = document.getElementById("resultado");
-    contenedor.innerHTML = `<p>Error al cargar datos: ${error.message}</p>`;
+    console.error("Error al obtener datos del Dólar Paralelo:", error);
+    document.getElementById("resultado").textContent = "Error al cargar los datos del Dólar Paralelo.";
+  }
+}
+
+function mostrarDatosBcv(datos) {
+  const contenedor = document.getElementById("resultadoBcv");
+  contenedor.innerHTML = ""; // Limpiar contenido anterior
+
+  if (datos && datos.monitors && datos.monitors.usd) {
+    const usdData = datos.monitors.usd;
+    precioBcv = usdData.price; // Guardar el precio BCV
+
+    // Mostrar datos en la tabla
+    const tabla = crearTabla(usdData.last_update, usdData.price);
+    contenedor.appendChild(tabla);
+    calcularDiferencia(); // Calcular diferencia después de obtener el precio BCV
+  } else {
+    contenedor.textContent = "No se encontraron datos disponibles.";
   }
 }
 
@@ -262,32 +206,56 @@ function mostrarDatos(datos) {
   const contenedor = document.getElementById("resultado");
   contenedor.innerHTML = ""; // Limpiar contenido anterior
 
-  // Crear una tabla para mostrar los datos
+  precioParalelo = datos.price; // Guardar el precio paralelo
+
+  const tabla = crearTabla(datos.last_update, datos.price);
+  contenedor.appendChild(tabla);
+  calcularDiferencia(); // Calcular diferencia después de obtener el precio paralelo
+}
+
+function crearTabla(ultimaActualizacion, precio) {
   const tabla = document.createElement("table");
   const encabezado = tabla.createTHead();
   const filaEncabezado = encabezado.insertRow(0);
-
-  // Definir encabezados de la tabla
   const encabezados = ["Última Actualización", "Precio (Bs)"];
+  
   encabezados.forEach((encabezado, index) => {
     const celda = filaEncabezado.insertCell(index);
     celda.innerHTML = `<strong>${encabezado}</strong>`;
   });
 
-  // Agregar los datos a la tabla
   const cuerpoTabla = tabla.createTBody();
   const filaDatos = cuerpoTabla.insertRow(0);
-  filaDatos.insertCell(0).innerText = datos.last_update; // Cambia 'last_update' según la estructura del JSON
-  filaDatos.insertCell(1).innerText = datos.price; // Cambia 'price' según la estructura del JSON
+  filaDatos.insertCell(0).innerText = ultimaActualizacion;
+  filaDatos.insertCell(1).innerText = precio;
 
-  // Agregar la tabla al contenedor
-  contenedor.appendChild(tabla);
+  return tabla;
 }
 
-// Llamar a la función al cargar la página
-document.addEventListener("DOMContentLoaded", function () {
-  obtenerDatos();
+// TODO: Diferencia y porcentaje
+function calcularDiferencia() {
+  if (precioBcv > 0 && precioParalelo > 0) {
+    const diferencia = precioParalelo - precioBcv;
+    const porcentaje = (( diferencia / precioBcv) * 100).toFixed(2);
+    
+    document.getElementById("diferenciaValor").textContent = `Diferencia: Bs ${diferencia.toFixed(2)}`;
+    document.getElementById("diferenciaPorcentaje").textContent = `Diferencia en porcentaje: ${porcentaje}%`;
+  }
+}
+
+// Agregar evento de clic al botón para actualizar datos
+document.getElementById("actualizar").addEventListener("click", () => {
+  obtenerDatosBcv();
+  obtenerDatosParalelo();
 });
+
+// Llamar a la función al cargar el DOM
+document.addEventListener("DOMContentLoaded", function () {
+  obtenerDatosBcv();
+  obtenerDatosParalelo();
+});
+
+
 
 // TODO: Obtener el valor del dolar y los factores de conversion entre Dolar Pesos y Bolivares
 // TODO: Valores del dolar

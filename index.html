@@ -26,7 +26,8 @@
             <h1> Conversión de Bolívares</h1>
         </div>
 
-        <button id="theme-toggle" class="btn btn-light" style="width: auto; display: flex; justify-content: space-between;">
+        <button id="theme-toggle" class="btn btn-light"
+            style="width: auto; display: flex; justify-content: space-between;">
             Tema <i class="fas fa-sun" id="theme-icon"></i>
         </button>
     </header>
@@ -50,13 +51,17 @@
         <!-- Contenedor del conversor, inicialmente visible = block oculto = none -->
         <div id="converter-container" style="display: block; width: 100%;">
             <div class="container-conversor">
-                 <!-- Alerta - Descripción  -->
-            <div class="alert alert-info field-container" style="margin: 6px 0 0 0; padding: 3px 0 9px 10px ;" role="alert">
-                <strong><h2 class="">Convertidor.</h2></strong>
-                
-            </div>
-            <hr>
-            <p class="subtitulo">Convierte Bolívares a Dólares, Euros y Pesos Colombianos con tasas de cambio actualizadas.</p>
+                <!-- Alerta - Descripción  -->
+                <div class="alert alert-info field-container" style="margin: 6px 0 0 0; padding: 3px 0 9px 10px ;"
+                    role="alert">
+                    <strong>
+                        <h2 class="">Convertidor.</h2>
+                    </strong>
+
+                </div>
+                <hr>
+                <p class="subtitulo">Convierte Bolívares a Dólares, Euros y Pesos Colombianos con tasas de cambio
+                    actualizadas.</p>
                 <!-- <h2>Convertidor</h2> -->
                 <!-- <div class="subtitulo">Convierte dolares, euros, pesos colombianos y bolivares.</div> -->
                 <!-- <p><strong>Fuente:</strong> Exchange-Rates.org</p> -->
@@ -139,6 +144,18 @@
                 <button onclick="obtenerDatos()" class="btn btn-primary mt-3" style="font-weight: 700;">Actualizar Datos
                     <i class="fas fa-sync-alt"></i></button>
             </div>
+            <hr>
+            <p class="subtitulo">Diferencia </p>
+            <hr>
+
+            <!-- TODO Div para mostrar la diferencia y el porcentaje -->
+            <div id="diferencia" style="margin-top: 20px;">
+                <h3>Diferencia entre Dólar BCV y Dólar Paralelo</h3>
+                <p id="diferenciaValor" style="font-weight: 500; font-size: 18px;"></p>
+                <p id="diferenciaPorcentaje" style="font-weight: 500; font-size: 18px;"></p>
+            </div>
+
+            <button id="actualizar" class="btn btn-primary mt-3" style="font-weight: 700;">Actualizar Datos</button>
         </div>
 
         <div class="container-bolivarDolarPesos">
@@ -188,11 +205,12 @@
             <hr>
             <div>
                 <div class="subtitulo">Valores para conversiones</div>
+                <hr>
                 <!-- <h3>Valores para conversiones</h3> -->
                 <div class="d-none" id="valorDolar"></div>
                 <div class="d-none" id="valorDolarBs"></div>
                 <div class="d-none" id="valorDolarParalelo"></div>
-                
+
                 <div class="text-center" id="factorBCV" style="font-size: 21px; font-weight: 700; text-align: center;">
                 </div>
                 <div class="text-center" id="factorParalelo"
