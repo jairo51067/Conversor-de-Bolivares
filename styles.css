@@ -481,7 +481,7 @@ th {
 }
 
 .gradient-info {
-  background: linear-gradient(45deg, #17a2b8, #0dcaf0);
+  background: radial-gradient(circle 250px, #17a2b8, #0dcaf0);
   /* Colores de info */
   color: white;
   padding: 15px;
@@ -490,7 +490,7 @@ th {
 }
 
 .gradient-success {
-  background: linear-gradient(45deg, #28a745, #85e89e);
+  background: radial-gradient(circle 250px, #28a745, #85e89e);
   /* Colores de success */
   color: white;
   padding: 15px;
