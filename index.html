@@ -23,16 +23,16 @@
     <header class="text-white p-3">
         <div class="d-flex justify-content-between align-items-center p-0">
             <!-- <img src="./src/assets/flags_vzla.png" style="width: 70px; height: 70px;" alt="Bandera de Venezuela"> -->
-            <h1> Conversión de Bolívares</h1>
+            <h1 class="cash"> Conversión de Bolívares</h1>
         </div>
 
-        <button id="theme-toggle" class="btn btn-light"
+        <button id="theme-toggle" class="show btn btn-light"
             style="width: auto; display: flex; justify-content: space-between;">
             Tema <i class="fas fa-sun" id="theme-icon"></i>
         </button>
     </header>
 
-    <div class="d-flex justify-content-between align-items-center px-3 pt-3">
+    <div class="run d-flex justify-content-between align-items-center p-3">
         <!-- TODO imagen bandera vzl -->
         <!-- <img src="./src/assets/flags_vzla.png" alt="Bandera de Venezuela"> -->
         <!-- TODO Botón para mostrar el conversor -->
@@ -41,13 +41,13 @@
                 style="width: auto; font-weight: 700;">Conversor</button>
         </div>
         <!-- TODO Fecha y Hora -->
-        <div class="date-time">
+        <div class=" date-time">
             <div id="current-date" class="text-black" style="font-weight: 600;">Fecha: <span id="date">date</span></div>
             <div id="current-time" class="text-black" style="font-weight: 800;">Hora: <span id="time">time</span></div>
         </div>
     </div>
 
-    <main class="container">
+    <main class="run container">
         <!-- Contenedor del conversor, inicialmente visible = block oculto = none -->
         <div id="converter-container" style="display: block; width: 100%;">
             <div class="container-conversor">

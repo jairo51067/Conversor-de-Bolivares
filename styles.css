@@ -1,546 +1,504 @@
 /* styles.css */
 :root {
-  --font-size-base: 1rem;
-  /* Cambiado a rem para mayor flexibilidad */
+	--font-size-base: 1rem;
+	/* Cambiado a rem para mayor flexibilidad */
 }
-
 /* Reset de márgenes y padding */
-*,
-*::after,
-*::before {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*,*::after,*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
-
 html {
-  font-size: var(--font-size-base);
+	font-size: var(--font-size-base);
 }
-
 /* Tema claro (por defecto) */
 body {
-  /* Fondo más claro */
-  /* background-color: #333; */
-  color: #333;
-  /* Color del texto */
-  margin: 0 auto;
-  /* Centrado */
-  line-height: 1.5;
-  /* Mejora la legibilidad */
+	/* Fondo más claro */
+	/* background-color: #333;
+	*/
+	color: #333;
+	/* Color del texto */
+	margin: 0 auto;
+	/* Centrado */
+	line-height: 1.5;
+	/* Mejora la legibilidad */
 }
-
 /* Tema oscuro */
 body.dark-mode {
-  background-color: #121212;
-  /* Fondo oscuro */
-  color: #ffffff;
-  /* Texto claro */
+	background-color: #121212;
+	/* Fondo oscuro */
+	color: #ffffff;
+	/* Texto claro */
 }
-
 header {
-  background-image: linear-gradient(to bottom right, yellow, blue 60%, red);
-  /* background-color: #333; */
-  /* Fondo oscuro */
-  padding: 1rem;
-  /* Espaciado interno */
-  display: flex;
-  /* Elementos en línea */
-  justify-content: space-between;
-  /* Alinear los elementos en la línea horizontal */
-  align-items: center;
-  /* Alinear los elementos en la línea vertical */
-  color: #333;
+	background-image: linear-gradient(to bottom right, yellow, blue 60%, red);
+	/* background-color: #333;
+	*/
+	/* Fondo oscuro */
+	padding: 1rem;
+	/* Espaciado interno */
+	display: flex;
+	/* Elementos en línea */
+	justify-content: space-between;
+	/* Alinear los elementos en la línea horizontal */
+	align-items: center;
+	/* Alinear los elementos en la línea vertical */
+	color: #333;
 }
-
 header h1 {
-  margin: 0;
-  /* Eliminar márgenes por defecto */
-  font-size: 1.5rem;
-  /* Tamaño de fuente más grande */
-  font-weight: bold;
-  /* Negrita para el título */
+	margin: 0;
+	/* Eliminar márgenes por defecto */
+	font-size: 1.5rem;
+	/* Tamaño de fuente más grande */
+	font-weight: bold;
+	/* Negrita para el título */
 }
-
 header .btn {
-  background-color: #f8f9fa;
-  /* Color de fondo del botón */
-  color: #333;
-  /* Color del texto del botón */
-  border: none;
-  /* Sin borde */
-  border-radius: 5px;
-  /* Bordes redondeados */
-  transition: background-color 0.3s;
-  /* Transición suave para el fondo */
+	background-color: #f8f9fa;
+	/* Color de fondo del botón */
+	color: #333;
+	/* Color del texto del botón */
+	border: none;
+	/* Sin borde */
+	border-radius: 5px;
+	/* Bordes redondeados */
+	transition: background-color 0.3s;
+	/* Transición suave para el fondo */
 }
-
 /* Efecto al pasar el ratón sobre el botón */
 header .btn:hover {
-  background-color: #e2e6ea;
-  /* Color de fondo más oscuro al pasar el ratón */
+	background-color: #e2e6ea;
+	/* Color de fondo más oscuro al pasar el ratón */
 }
-
 /* Estilo para el icono del tema */
 #theme-icon {
-  margin-left: 5px;
-  /* Espaciado a la izquierda del icono */
+	margin-left: 5px;
+	/* Espaciado a la izquierda del icono */
 }
-
 /* Contenedores */
 .date-time {
-  display: flex;
-  /* Elementos en línea */
-  justify-content: end;
-  /* Centrado horizontal */
-  align-items: center;
-  gap: 12px;
-  /* Espaciado entre elementos */
-  color: black;
-  /* Texto oscuro */
-
+	display: flex;
+	/* Elementos en línea */
+	justify-content: end;
+	/* Centrado horizontal */
+	align-items: center;
+	gap: 12px;
+	/* Espaciado entre elementos */
+	color: black;
+	/* Texto oscuro */
 }
-
 .container {
-  display: flex;
-  /* Elementos en línea */
-  flex-wrap: nowrap;
-  /* Asegura que los elementos se envuelvan */
-  justify-content: center;
-  /* Centrado horizontal */
-  gap: 1rem;
-  /* Espaciado entre elementos */
-  /* margin-top: 1rem; */
-  /* Espaciado superior */
-  margin-bottom: 1rem;
-  /* Espaciado inferior */
-  padding: 0 1.5rem;
-  /* Espaciado interno */
-  /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
-  background: white;
-  /* Fondo claro por defecto */
-  margin: 0 auto;
-  /* Centrado */
-  max-width: 100%;
-  /* Ancho máximo */
+	display: flex;
+	/* Elementos en línea */
+	flex-wrap: nowrap;
+	/* Asegura que los elementos se envuelvan */
+	justify-content: center;
+	/* Centrado horizontal */
+	gap: 1rem;
+	/* Espaciado entre elementos */
+	/* margin-top: 1rem;
+	*/
+	/* Espaciado superior */
+	margin-bottom: 1rem;
+	/* Espaciado inferior */
+	padding: 0 1.5rem;
+	/* Espaciado interno */
+	/* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	*/
+	background: white;
+	/* Fondo claro por defecto */
+	margin: 0 auto;
+	/* Centrado */
+	max-width: 100%;
+	/* Ancho máximo */
 }
-
-
-.container-conversor,
-.contenedor-noticias,
-.container-bolivarDolarPesos,
-.container-valorDollar,
-.container-factores {
-  width: 100%;
-  /* Espaciado proporcional */
-  margin: 0 auto;
-  /* Espaciado interno proporcional */
-  padding: 1rem;
-  /* Sombra */
-  /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
-  /* Fondo claro por defecto */
-  background: white;
-  /* border */
-  /* border: 1px solid #ccc; */
+.container-conversor,.contenedor-noticias,.container-bolivarDolarPesos,.container-valorDollar,.container-factores {
+	width: 100%;
+	/* Espaciado proporcional */
+	margin: 0 auto;
+	/* Espaciado interno proporcional */
+	padding: 1rem;
+	/* Sombra */
+	/* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	*/
+	/* Fondo claro por defecto */
+	background: white;
+	/* border */
+	/* border: 1px solid #ccc;
+	*/
 }
-
 .container-conversor {
-  border: none;
+	border: none;
 }
-
 body.dark-mode .date-time {
-  /* background-color: #333; */
-  /* Fondo oscuro */
-  border: none;
-  /* Borde más suave */
-  color: #fff;
-
+	/* background-color: #333;
+	*/
+	/* Fondo oscuro */
+	border: none;
+	/* Borde más suave */
+	color: #fff;
 }
-
-body.dark-mode .container,
-body.dark-mode .container-conversor,
-body.dark-mode .contenedor-noticias,
-body.dark-mode .container-valorDollar,
-body.dark-mode .container-bolivarDolarPesos,
-body.dark-mode .container-factores {
-  /* Fondo oscuro */
-  background: #1e1e1e;
-  /* Borde más suave */
-  /* border: 1px solid #f7f5f5; */
-  border: none;
-  /* padding: 5%; */
+body.dark-mode .container,body.dark-mode .container-conversor,body.dark-mode .contenedor-noticias,body.dark-mode .container-valorDollar,body.dark-mode .container-bolivarDolarPesos,body.dark-mode .container-factores {
+	/* Fondo oscuro */
+	background: #1e1e1e;
+	/* Borde más suave */
+	/* border: 1px solid #f7f5f5;
+	*/
+	border: none;
+	/* padding: 5%;
+	*/
 }
-
-
 .subtitulo {
-  font-size: 0.8em;
-  /* Tamaño de fuente más pequeño */
-  color: #888;
-  /* Color gris para un efecto disimulado */
-
-  opacity: 0.7;
-  /* Opacidad para un efecto más elegante */
+	font-size: 0.8em;
+	/* Tamaño de fuente más pequeño */
+	color: #888;
+	/* Color gris para un efecto disimulado */
+	opacity: 0.7;
+	/* Opacidad para un efecto más elegante */
 }
-
-
-
 h1 {
-  text-align: start;
-  align-items: center;
-  /* font-size: 2rem;  */
-  /* Tamaño de fuente proporcional */
+	text-align: start;
+	align-items: center;
+	/* font-size: 2rem;
+	*/
+	/* Tamaño de fuente proporcional */
 }
-
 h2 {
-  margin: 1rem 0;
-  /* Espaciado uniforme */
+	margin: 1rem 0;
+	/* Espaciado uniforme */
 }
-
 h3 {
-  margin: 1rem 0;
-  /* Espaciado uniforme */
+	margin: 1rem 0;
+	/* Espaciado uniforme */
 }
-
 h4 {
-  margin: 1rem 0;
-  /* Espaciado uniforme */
+	margin: 1rem 0;
+	/* Espaciado uniforme */
 }
-
 h5 {
-  margin: 1rem 0;
-  /* Espaciado uniforme */
+	margin: 1rem 0;
+	/* Espaciado uniforme */
 }
-
 a {
-  color: #007bff;
-  text-decoration: none;
-  font-size: 0.9rem;
-  /* Tamaño de fuente proporcional */
+	color: #007bff;
+	text-decoration: none;
+	font-size: 0.9rem;
+	/* Tamaño de fuente proporcional */
 }
-
 /* Formulario */
 form {
-  display: flex;
-  flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
-
 /* Estilos generales para los campos de entrada */
-input,
-select {
-  width: 100%;
-  /* Campos de entrada ocupan todo el ancho */
-  margin: 0.5rem 0;
-  /* Espaciado uniforme */
-  padding: 0.75rem;
-  /* Espaciado interno */
-  border: 1px solid #ccc;
-  /* Borde más suave */
-  border-radius: 5px;
-  /* Bordes redondeados */
-  transition: border-color 0.3s, box-shadow 0.3s;
-  /* Transición para el borde y sombra */
-  font-size: 2rem;
-  /* Tamaño de fuente */
-  background-color: #f9f9f9;
-  /* Color de fondo suave */
- }
-
+input,select {
+	width: 100%;
+	/* Campos de entrada ocupan todo el ancho */
+	margin: 0.5rem 0;
+	/* Espaciado uniforme */
+	padding: 0.75rem;
+	/* Espaciado interno */
+	border: 1px solid #ccc;
+	/* Borde más suave */
+	border-radius: 5px;
+	/* Bordes redondeados */
+	transition: border-color 0.3s, box-shadow 0.3s;
+	/* Transición para el borde y sombra */
+	font-size: 2rem;
+	/* Tamaño de fuente */
+	background-color: #f9f9f9;
+	/* Color de fondo suave */
+}
 /* Efecto de enfoque */
-input:focus,
-select:focus {
-  border-color: #007bff;
-  /* Color del borde al enfocar */
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-  /* Sombra al enfocar */
-  outline: none;
-  /* Eliminar el contorno predeterminado */
+input:focus,select:focus {
+	border-color: #007bff;
+	/* Color del borde al enfocar */
+	box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+	/* Sombra al enfocar */
+	outline: none;
+	/* Eliminar el contorno predeterminado */
 }
-
 .form-control{
-  height: 50px;
-  font-size: 18px;
-  font-style:normal;
-  font-weight: 400;
-  
-  line-height: 1.5;
+	height: 50px;
+	font-size: 18px;
+	font-style:normal;
+	font-weight: 400;
+	line-height: 1.5;
 }
-
 /* Estilo para el contenedor de los campos */
 .field-container {
-  margin: 1rem 0;
-  /* Espaciado entre campos */
-  padding: 1rem;
-  /* Espaciado interno del contenedor */
-  border: 1px solid #ddd;
-  /* Borde del contenedor */
-  border-radius: 10px;
-  /* Bordes redondeados del contenedor */
-  background-color: #ffffff;
-  /* Fondo blanco para el contenedor */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  /* Sombra suave para el contenedor */
+	margin: 1rem 0;
+	/* Espaciado entre campos */
+	padding: 1rem;
+	/* Espaciado interno del contenedor */
+	border: 1px solid #ddd;
+	/* Borde del contenedor */
+	border-radius: 10px;
+	/* Bordes redondeados del contenedor */
+	background-color: #ffffff;
+	/* Fondo blanco para el contenedor */
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+	/* Sombra suave para el contenedor */
 }
-
 /* Estilo para etiquetas */
 label {
-  font-weight: bold;
-  /* Negrita para las etiquetas */
-  margin-bottom: 0.5rem;
-  /* Espaciado inferior */
-  display: block;
-  /* Asegura que la etiqueta esté en una nueva línea */
+	font-weight: bold;
+	/* Negrita para las etiquetas */
+	margin-bottom: 0.5rem;
+	/* Espaciado inferior */
+	display: block;
+	/* Asegura que la etiqueta esté en una nueva línea */
 }
-
 button {
-  width: 100%;
-  background-color: #007bff;
-  /* Color del botón */
-  color: white;
-  /* Texto del botón */
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s;
-  /* Transición suave */
+	width: 100%;
+	background-color: #007bff;
+	/* Color del botón */
+	color: white;
+	/* Texto del botón */
+	cursor: pointer;
+	transition: background-color 0.3s, transform 0.2s;
+	/* Transición suave */
 }
-
 button:hover {
-  background-color: #0056b3;
-  /* Color del botón al pasar el mouse */
-  transform: translateY(-2px);
-  /* Efecto de elevación */
+	background-color: #0056b3;
+	/* Color del botón al pasar el mouse */
+	transform: translateY(-2px);
+	/* Efecto de elevación */
 }
-
-
-#result,
-#history-list {
-  border: none;
-  padding: 0.75rem;
-  /* Espaciado interno */
-  background-color: #fff;
-  color: #000;
-  border-radius: 5px;
-  transition: background-color 0.3s;
-  /* Transición para el color de fondo */
+#result,#history-list {
+	border: none;
+	padding: 0.75rem;
+	/* Espaciado interno */
+	background-color: #fff;
+	color: #000;
+	border-radius: 5px;
+	transition: background-color 0.3s;
+	/* Transición para el color de fondo */
 }
-
 /* Botones */
 #theme-toggle {
-  width: auto;
-  margin: 0 0 0 auto;
-  background-color: #333;
-  /* Fondo del botón */
-  color: white;
-  /* Texto del botón */
-  border: none;
-  font-size: 1rem;
-  /* Tamaño de fuente proporcional */
-  /* padding: 1rem; */
-  /* Espaciado interno */
+	width: auto;
+	margin: 0 0 0 auto;
+	background-color: #333;
+	/* Fondo del botón */
+	color: white;
+	/* Texto del botón */
+	border: none;
+	font-size: 1rem;
+	/* Tamaño de fuente proporcional */
+	/* padding: 1rem;
+	*/
+	/* Espaciado interno */
 }
-
 button {
-  width: 100%;
-  background-color: #007bff;
-  /* Color del botón */
-  color: white;
-  /* Texto del botón */
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s;
-  /* Transición suave */
-
+	width: 100%;
+	background-color: #007bff;
+	/* Color del botón */
+	color: white;
+	/* Texto del botón */
+	cursor: pointer;
+	transition: background-color 0.3s, transform 0.2s;
+	/* Transición suave */
 }
-
 button:hover {
-  background-color: #0056b3;
-  /* Color del botón al pasar el mouse */
-  transform: translateY(-2px);
-  /* Efecto de elevación */
+	background-color: #0056b3;
+	/* Color del botón al pasar el mouse */
+	transform: translateY(-2px);
+	/* Efecto de elevación */
 }
-
 /* Estilos adicionales */
 #history {
-  margin-top: 1rem;
-  /* Espaciado superior */
+	margin-top: 1rem;
+	/* Espaciado superior */
 }
-
 #history-list {
-  list-style-type: none;
-  /* Sin viñetas */
-  padding: 0;
-  /* Sin padding */
+	list-style-type: none;
+	/* Sin viñetas */
+	padding: 0;
+	/* Sin padding */
 }
-
 .estiloDolar {
-  color: green;
-  /* Cambia el color del texto */
-  font-weight: bold;
-  /* Hace el texto más grueso */
-  font-size: 1.5em;
-  /* Aumenta el tamaño de la fuente */
+	color: green;
+	/* Cambia el color del texto */
+	font-weight: bold;
+	/* Hace el texto más grueso */
+	font-size: 1.5em;
+	/* Aumenta el tamaño de la fuente */
 }
-
 .estiloFactor {
-  color: blue;
-  /* Cambia el color del texto */
-  font-weight: bold;
-  /* Hace el texto más grueso */
-  font-size: 1.5em;
-  /* Aumenta el tamaño de la fuente */
+	color: blue;
+	/* Cambia el color del texto */
+	font-weight: bold;
+	/* Hace el texto más grueso */
+	font-size: 1.5em;
+	/* Aumenta el tamaño de la fuente */
 }
-
 footer {
-  /* Alineación a la derecha */
-  text-align: right;
-  /* Mejora la legibilidad */
-  line-height: 1.5;
-  /* Fondo oscuro */
-  background-color: #333;
-  /* background-image: linear-gradient(to bottom right, yellow, blue 60%, red); */
-  /* Texto claro */
-  color: #ffffff;
-  /* Espaciado interno */
-  padding: 20px;
-  /* Sombra suave para dar profundidad */
-  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
-  /* Espaciado en la parte superior */
-  margin-top: 20px;
+	/* Alineación a la derecha */
+	text-align: right;
+	/* Mejora la legibilidad */
+	line-height: 1.5;
+	/* Fondo oscuro */
+	background-color: #333;
+	/* background-image: linear-gradient(to bottom right, yellow, blue 60%, red);
+	*/
+	/* Texto claro */
+	color: #ffffff;
+	/* Espaciado interno */
+	padding: 20px;
+	/* Sombra suave para dar profundidad */
+	box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
+	/* Espaciado en la parte superior */
+	margin-top: 20px;
 }
-
 /* Estilo para el párrafo */
 footer p {
-  margin: 0;
-  /* Eliminar márgenes por defecto */
-  font-size: 0.9rem;
-  /* Tamaño de fuente más pequeño */
+	margin: 0;
+	/* Eliminar márgenes por defecto */
+	font-size: 0.9rem;
+	/* Tamaño de fuente más pequeño */
 }
-
 /* Estilo para el encabezado */
 footer h5 {
-  margin: 0.5rem 0;
-  /* Espaciado superior e inferior */
-  font-size: 1rem;
-  /* Tamaño de fuente */
-  font-weight: 600;
-  /* Negrita */
+	margin: 0.5rem 0;
+	/* Espaciado superior e inferior */
+	font-size: 1rem;
+	/* Tamaño de fuente */
+	font-weight: 600;
+	/* Negrita */
 }
-
 /* Estilo para el enlace */
 footer a {
-  color: #00bfff;
-  /* Color del enlace */
-  text-decoration: none;
-  /* Sin subrayado */
-  transition: color 0.3s;
-  /* Transición suave para el color */
+	color: #00bfff;
+	/* Color del enlace */
+	text-decoration: none;
+	/* Sin subrayado */
+	transition: color 0.3s;
+	/* Transición suave para el color */
 }
-
 /* Efecto al pasar el ratón sobre el enlace */
 footer a:hover {
-  color: #ffcc00;
-  /* Color del enlace al pasar el ratón */
-  text-decoration: underline;
-  /* Subrayar al pasar el ratón */
+	color: #ffcc00;
+	/* Color del enlace al pasar el ratón */
+	text-decoration: underline;
+	/* Subrayar al pasar el ratón */
 }
-
 /* Estilos de modo oscuro para botones */
 body.dark-mode button {
-  background-color: #3a3a3a;
-  /* Color del botón en modo oscuro */
-  color: #ffffff;
+	background-color: #3a3a3a;
+	/* Color del botón en modo oscuro */
+	color: #ffffff;
 }
-
 body.dark-mode button:hover {
-  background-color: #4a4a4a;
-  /* Color del botón al pasar el mouse en modo oscuro */
+	background-color: #4a4a4a;
+	/* Color del botón al pasar el mouse en modo oscuro */
 }
-
-#resultado,
-#resultadoBcv {
-  font-weight: bold;
-  /* Negrita */
+#resultado,#resultadoBcv {
+	font-weight: bold;
+	/* Negrita */
 }
-
 table {
-  width: 100%;
-  /* Tabla ocupa todo el ancho */
-  border-collapse: collapse;
-  /* Colapsar bordes */
+	width: 100%;
+	/* Tabla ocupa todo el ancho */
+	border-collapse: collapse;
+	/* Colapsar bordes */
 }
-
-th,
-td {
-  border: 1px solid #ddd;
-  /* Bordes suaves */
-  padding: 0.5rem;
-  /* Espaciado interno */
-  text-align: center;
-  /* Alineación centrada */
+th,td {
+	border: 1px solid #ddd;
+	/* Bordes suaves */
+	padding: 0.5rem;
+	/* Espaciado interno */
+	text-align: center;
+	/* Alineación centrada */
 }
-
 th {
-  background-color: #f2f2f2;
-  /* Fondo de encabezado */
+	background-color: #f2f2f2;
+	/* Fondo de encabezado */
 }
-
 .gradient-info {
-  background: radial-gradient(circle 250px, #17a2b8, #0dcaf0);
-  /* Colores de info */
-  color: white;
-  padding: 15px;
-  border-radius: 8px;
-  text-align: start;
+	background: radial-gradient(circle 250px, #17a2b8, #0dcaf0);
+	/* Colores de info */
+	color: white;
+	padding: 15px;
+	border-radius: 8px;
+	text-align: start;
 }
-
 .gradient-success {
-  background: radial-gradient(circle 250px, #28a745, #85e89e);
-  /* Colores de success */
-  color: white;
-  padding: 15px;
-  border-radius: 8px;
-  text-align: start;
+	background: radial-gradient(circle 250px, #28a745, #85e89e);
+	/* Colores de success */
+	color: white;
+	padding: 15px;
+	border-radius: 8px;
+	text-align: start;
 }
-
 /* Media query para pantallas de 1000px o menos */
 @media only screen and (max-width: 1000px) {
-  html {
-    font-size: calc(var(--font-size-base) * 0.9);
-    /* Ajuste de tamaño de fuente */
-
-  }
-
-  h1 {
-    font-size: 1.5rem;
-    /* Ajuste para pantallas pequeñas */
-  }
-
-  .container {
-    flex-direction: column;
-    /* Apilado vertical */
-    padding: 0.7rem;
-    /* Sin padding */
-    margin: 0;
-    /* Sin margen */
-  }
-
+	html {
+		font-size: calc(var(--font-size-base) * 0.9);
+		/* Ajuste de tamaño de fuente */
+	}
+	h1 {
+		font-size: 1.5rem;
+		/* Ajuste para pantallas pequeñas */
+	}
+	.container {
+		flex-direction: column;
+		/* Apilado vertical */
+		padding: 0.7rem;
+		/* Sin padding */
+		margin: 0;
+		/* Sin margen */
+	}
 }
-
 /* Media query para pantallas de 500px o menos */
 /* Estilos para dispositivos móviles */
 @media only screen and (max-width: 500px) {
-  html {
-    font-size: calc(var(--font-size-base) * 0.8);
-    /* Ajuste de tamaño de fuente */
-  }
-
-  input,
-  select {
-    padding: 1rem;
-    /* Aumentar el espaciado interno en móviles */
-    font-size: 2rem;
-    /* Aumentar el tamaño de fuente en móviles */
-    border-radius: 10px;
-    /* Bordes más redondeados en móviles */
-    background-color: #e9ecef;
-    /* Color de fondo más claro en móviles */
-  }
-
+	html {
+		font-size: calc(var(--font-size-base) * 0.8);
+		/* Ajuste de tamaño de fuente */
+	}
+	input,select {
+		padding: 1rem;
+		/* Aumentar el espaciado interno en móviles */
+		font-size: 2rem;
+		/* Aumentar el tamaño de fuente en móviles */
+		border-radius: 10px;
+		/* Bordes más redondeados en móviles */
+		background-color: #e9ecef;
+		/* Color de fondo más claro en móviles */
+	}
+}
+/* Animaciones */
+.show{
+	animation:
+    change-color 5s linear 0.5s 4 normal forwards running;
+}
+@keyframes change-color{
+	0%{background-color: #7c7c7c;}
+	50%{background-color: #333;}
+	100%{background-color: #333;}
 }
 
+.run{
+	animation:
+    run-color 5s linear 0.5s 3 normal forwards running;
+}
+
+@keyframes run-color{
+	0%{background-color: #ffffff;}
+  50%{background-color: #949494;}
+  100%{background-color: #ffffff;}
+}
+
+.cash{
+	animation:
+    cash-color 5s linear 0.5s 2 normal forwards running;
+}
+
+@keyframes cash-color{
+	0%{color: yellow;}
+	25%{color: blue;}
+	50%{color: red;}
+	100%{color: white;}
+}
