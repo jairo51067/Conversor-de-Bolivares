@@ -15,8 +15,7 @@ html {
 /* Tema claro (por defecto) */
 body {
 	/* Fondo más claro */
-	/* background-color: #333;
-	*/
+	/* background-image: linear-gradient(to top #ffffff, #aed6f1, #00bfff) ; */
 	color: #333;
 	/* Color del texto */
 	margin: 0 auto;
@@ -33,7 +32,7 @@ body.dark-mode {
 }
 header {
 	background-image: linear-gradient(to bottom right, yellow, blue 60%, red);
-	padding: 2.5rem;
+	padding: 2rem;
 	/* Espaciado interno */
 	display: flex;
 	/* Elementos en línea */
@@ -96,15 +95,15 @@ header .btn:hover {
 	/* Centrado horizontal */
 	gap: 2rem;
 	/* Espaciado entre elementos */
-	/* margin-top: 1rem;
-	*/
+	/* margin-top: 1rem;*/
 	/* Espaciado superior */
 	margin-bottom: 1rem;
 	/* Espaciado inferior */
 	padding: 0.5rem 2rem 2rem 2rem;
 	/* Espaciado interno */
 	/* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);*/
-	background-color: #aed6f1;
+	background: linear-gradient(white, #aed6f1 10% 50%, #aed6f1 50% 100%) ;
+	/* background-color: #aed6f1; */
 	/* background: #4285F4; */
 	/* Fondo claro por defecto */
 	margin: 0 auto;
@@ -119,21 +118,18 @@ header .btn:hover {
 	/* Espaciado interno proporcional */
 	padding: 1.3rem;
 	/* Sombra */
-	/* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-	*/
+	/* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);*/
 	/* Fondo claro por defecto */
 	background: white;
 	/* border */
-	/* border: 1px solid #ccc;
-	*/
+	/* border: 1px solid #ccc;*/
 	border-radius: 10px;
 }
 .container-conversor {
 	border: none;
 }
 body.dark-mode .date-time {
-	/* background-color: #333;
-	*/
+	/* background-color: #333;*/
 	/* Fondo oscuro */
 	border: none;
 	/* Borde más suave */
@@ -143,8 +139,7 @@ body.dark-mode .container,body.dark-mode .container-conversor,body.dark-mode .co
 	/* Fondo oscuro */
 	background: #1e1e1e;
 	/* Borde más suave */
-	/* border: 1px solid #f7f5f5;
-	*/
+	/* border: 1px solid #f7f5f5;*/
 	border: none;
 	/* padding: 5%;
 	*/
@@ -160,8 +155,7 @@ body.dark-mode .container,body.dark-mode .container-conversor,body.dark-mode .co
 h1 {
 	text-align: start;
 	align-items: center;
-	/* font-size: 2rem;
-	*/
+	/* font-size: 2rem;*/
 	/* Tamaño de fuente proporcional */
 }
 h2 {
