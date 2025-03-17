@@ -20,10 +20,10 @@
 </head>
 
 <body>
-    <header class="text-white p-3">
+    <header class="text-white">
         <div class="d-flex justify-content-between align-items-center p-0">
             <!-- <img src="./src/assets/flags_vzla.png" style="width: 70px; height: 70px;" alt="Bandera de Venezuela"> -->
-            <h1 class="cash"> Conversión de Bolívares</h1>
+            <h1> Conversión de Bolívares</h1>
         </div>
 
         <button id="theme-toggle" class="show btn btn-light"
@@ -32,7 +32,7 @@
         </button>
     </header>
 
-    <div class="run d-flex justify-content-between align-items-center p-3">
+    <div class="d-flex justify-content-between align-items-center p-4" style="background-color: #aed6f1">
         <!-- TODO imagen bandera vzl -->
         <!-- <img src="./src/assets/flags_vzla.png" alt="Bandera de Venezuela"> -->
         <!-- TODO Botón para mostrar el conversor -->
@@ -47,7 +47,7 @@
         </div>
     </div>
 
-    <main class="run container">
+    <main class="container">
         <!-- Contenedor del conversor, inicialmente visible = block oculto = none -->
         <div id="converter-container" style="display: block; width: 100%;">
             <div class="container-conversor">
@@ -106,38 +106,58 @@
         <div class="container-valorDollar">
             <!-- Alerta - Descripción  -->
             <div class="alert alert-info my-2 field-container" role="alert">
-                <strong>Valor del Dolar en Bolivares, fuentes del BCV y EnParaleloVzla.</strong>
+                <strong>Valor del Dolar y Euro en Bolivares, fuentes del BCV, EnParaleloVzla y Exchange Rate.</strong>
             </div>
 
             <div>
                 <div class="d-flex align-items-center m-3">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_xcaRDP0KBd5uLuZiBwBcq5rrlE93l92vef5jI4ggBvCcMokp9Q-MXpsvkMEHSoq1fG0&usqp=CAU"
-                        width="60px" height="60px" alt="Logo Banco Central de Venezuela" class="rounded-circle">
-                    <div class="ml-3">
-                        <h2>Fuente: <strong>BCV</strong></h2>
+                    <img src="/src/assets/bolivar-venezolano.png" width="50px" height="50px"
+                        alt="Logo Bolivares Venezuela">
+                    <div class="p-4 m-2">
+                        <p style="font-size: 21px;">Fuente: <strong>BCV</strong></p>
                         <!-- <a href="https://www.bcv.org.ve/" target="_blank" class="btn btn-link">Visitar el sitio web del BCV</a> -->
                     </div>
                 </div>
                 <hr>
-                <p class="subtitulo">Valores referenciales</p>
+                <p class="subtitulo">Valor referencial, del dolar en bolivares</p>
                 <hr>
                 <div id="resultadoBcv" style="font-size: 18px; font-weight: 700; text-align: center;">Cargando datos...
                 </div>
                 <button id="actualizar" class="btn btn-primary mt-3" style="font-weight: 700;">Actualizar Datos <i
                         class="fas fa-sync-alt"></i></button>
             </div>
+
+            <div>
+                <div class="d-flex align-items-center m-3">
+                    <img src="/src/assets/euro-symbol-icon-size_64.png" width="60px" height="60px" alt="Logo Euro"
+                        class="rounded-circle">
+                    <div class="p-4 m-2">
+                        <p style="font-size: 21px;">Fuente: <strong>Exchange Rate</strong></p>
+                    </div>
+                </div>
+                <hr>
+                <p class="subtitulo">Valor referencial, del euro en bolivares</p>
+                <hr>
+                <div id="resultadoEuro" style="font-size: 18px; font-weight: 700; text-align: center;">Cargando datos...
+                </div>
+                <button onclick="obtenerDatosEuro()" class="btn btn-primary mt-3" style="font-weight: 700;">Actualizar
+                    Datos
+                    <i class="fas fa-sync-alt"></i></button>
+            </div>
+
             <hr>
+
             <div>
                 <div class="d-flex align-items-center m-3">
                     <img src="https://res.cloudinary.com/dcpyfqx87/image/upload/v1716093838/criptodolar/jukudiiabja65ijuu8yo.png"
                         width="60px" height="60px" alt="Logo EnParaleloVzla" class="rounded-circle">
-                    <div class="ml-3">
-                        <h2>Fuente: <strong>EnParaleloVzla</strong></h2>
+                    <div class="p-4 m-2">
+                        <p style="font-size: 21px;">Fuente: <strong>EnParaleloVzla</strong></p>
                         <!-- <a href="https://www.instagram.com/enparalelovzla_oficial/?hl=es-la" target="_blank" class="btn btn-link">Visitar enparalelovzla_oficial</a> -->
                     </div>
                 </div>
                 <hr>
-                <p class="subtitulo">Valores referenciales</p>
+                <p class="subtitulo">Valor referencial del dolar en bolivares, a cambio paralelo</p>
                 <hr>
                 <div id="resultado" style="font-size: 18px; font-weight: 700; text-align: center;">Cargando datos...
                 </div>
@@ -150,7 +170,7 @@
 
             <!-- TODO Div para mostrar la diferencia y el porcentaje -->
             <div id="diferencia" style="margin-top: 20px;">
-                <h3>Diferencia entre Dólar BCV y Dólar Paralelo</h3>
+                <h2>Diferencia entre Dólar BCV y Dólar Paralelo</h2>
                 <p id="diferenciaValor" style="font-weight: 500; font-size: 18px;"></p>
                 <p id="diferenciaPorcentaje" style="font-weight: 500; font-size: 18px;"></p>
             </div>

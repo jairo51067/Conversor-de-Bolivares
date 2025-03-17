@@ -153,6 +153,9 @@ document.getElementById("close-converter").addEventListener("click", function() 
 // Variables globales para almacenar los precios
 let precioBcv = 0;
 let precioParalelo = 0;
+let precioEuroBcv = 0; // Nueva variable para el precio del euro
+
+const apiKeyExchangeRateEuro = "f390895452a9366a9eeff7c3"; // Reemplaza con tu propia clave de API
 
 async function obtenerDatosBcv() {
   try {
@@ -185,6 +188,26 @@ async function obtenerDatosParalelo() {
   }
 }
 
+async function obtenerDatosEuro() {
+  try {
+    // Cambia la URL a la API de ExchangeRate para obtener el valor del euro
+    const respuesta = await fetch(`https://api.exchangerate-api.com/v4/latest/EUR`); // Asegúrate de que esta URL sea correcta
+    if (!respuesta.ok) {
+      const errorDetails = await respuesta.text();
+      throw new Error("Error en la solicitud: " + respuesta.status + " - " + errorDetails);
+    }
+    const datos = await respuesta.json();
+    console.log("Datos cargados:", datos);
+    
+    // Suponiendo que el valor del bolívar está en la respuesta
+    precioEuroBcv = datos.rates.VES; // Asegúrate de que "VES" sea el código correcto para el bolívar
+    mostrarDatosEuro(precioEuroBcv);
+  } catch (error) {
+    console.error("Error al obtener datos del Euro:", error);
+    document.getElementById("resultadoEuro").textContent = "Error al cargar los datos del Euro.";
+  }
+}
+
 function mostrarDatosBcv(datos) {
   const contenedor = document.getElementById("resultadoBcv");
   contenedor.innerHTML = ""; // Limpiar contenido anterior
@@ -213,6 +236,15 @@ function mostrarDatos(datos) {
   calcularDiferencia(); // Calcular diferencia después de obtener el precio paralelo
 }
 
+function mostrarDatosEuro(precio) {
+  const contenedor = document.getElementById("resultadoEuro");
+  contenedor.innerHTML = ""; // Limpiar contenido anterior
+
+  // Mostrar datos en la tabla
+  const tabla = crearTabla(new Date().toLocaleString(), precio); // Usar la fecha actual como última actualización
+  contenedor.appendChild(tabla);
+}
+
 function crearTabla(ultimaActualizacion, precio) {
   const tabla = document.createElement("table");
   const encabezado = tabla.createTHead();
@@ -231,6 +263,12 @@ function crearTabla(ultimaActualizacion, precio) {
 
   return tabla;
 }
+
+// Llamadas iniciales para cargar los datos
+obtenerDatosBcv();
+obtenerDatosParalelo();
+obtenerDatosEuro();
+
 
 // TODO: Diferencia y porcentaje
 function calcularDiferencia() {
