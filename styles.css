@@ -99,7 +99,7 @@ header .btn:hover {
 	/* Espaciado superior */
 	margin-bottom: 1rem;
 	/* Espaciado inferior */
-	padding: 1rem 2rem 2rem 2rem;
+	padding: 1rem;
 	/* Espaciado interno */
 	/* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);*/
 	background: linear-gradient(white, #aed6f1 10% 40%, #aed6f1 40% 100%) ;
