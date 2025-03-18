@@ -102,7 +102,7 @@ header .btn:hover {
 	padding: 0.5rem 2rem 2rem 2rem;
 	/* Espaciado interno */
 	/* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);*/
-	background: linear-gradient(white, #aed6f1 10% 50%, #aed6f1 50% 100%) ;
+	background: linear-gradient(white, #aed6f1 10% 40%, #aed6f1 40% 100%) ;
 	/* background-color: #aed6f1; */
 	/* background: #4285F4; */
 	/* Fondo claro por defecto */
@@ -145,11 +145,11 @@ body.dark-mode .container,body.dark-mode .container-conversor,body.dark-mode .co
 	*/
 }
 .subtitulo {
-	font-size: 0.8em;
+	font-size: 0.9em;
 	/* Tamaño de fuente más pequeño */
 	color: #888;
 	/* Color gris para un efecto disimulado */
-	opacity: 0.7;
+	opacity: 0.9;
 	/* Opacidad para un efecto más elegante */
 }
 h1 {
