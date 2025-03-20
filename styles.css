@@ -102,7 +102,7 @@ header .btn:hover {
 	padding: 1rem;
 	/* Espaciado interno */
 	/* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);*/
-	background: linear-gradient(white, #aed6f1 10% 40%, #aed6f1 40% 100%) ;
+	background: linear-gradient(white, #aed6f1 40% 70%, #89b6fa 100%) ;
 	/* background-color: #aed6f1; */
 	/* background: #4285F4; */
 	/* Fondo claro por defecto */
@@ -504,13 +504,17 @@ th {
 	padding: 10px; /* Espaciado */
 	font-size: 18px; /* Tamaño de fuente */
 	overflow: hidden; /* Ocultar el desbordamiento */
-	
 	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidad */
+	position: relative; /* Posición relativa para el banner */
+	width: 100%; /* Ancho completo */
+	margin: 0 auto; /* Centrado */
+	text-align: center; /* Centrado del texto */
 }
 
 #banner-content {
+	white-space: nowrap; /* Evitar el salto de línea */
 	display: inline-block;
-	animation: marquee 1s linear infinite; /* Aumenta el tiempo a 60 segundos */
+	/* Sin animación inicialmente */
 }
 
 .crypto-item {
@@ -529,7 +533,12 @@ th {
 .crypto-change {
 	margin-left: 5px; /* Espacio entre precio y cambio */
 }
+
+.marquee {
+	animation: marquee 30s linear infinite; /* Ajusta la duración de la animación aquí */
+}
+
 @keyframes marquee {
-	100% { transform: translateX(100%); }
+	0% { transform: translateX(15%); }
 	100% { transform: translateX(-100%); }
 }

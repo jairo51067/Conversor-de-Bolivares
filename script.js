@@ -21,6 +21,11 @@ async function fetchCryptoData() {
 
       // Actualizar el contenido del banner
       document.getElementById('banner-content').innerHTML = bannerContent;
+
+      // Iniciar la animación después de un pequeño retraso
+      setTimeout(() => {
+          document.getElementById('banner-content').classList.add('marquee');
+      }, 3000); // 3 segundos de retraso
   } catch (error) {
       console.error("Error fetching crypto data:", error);
       document.getElementById('banner-content').textContent = "Error al cargar datos de criptomonedas.";
@@ -509,20 +514,67 @@ themeToggleButton.addEventListener("click", () => {
 function updateDateTime() {
   const now = new Date();
   const date = now.toLocaleDateString("es-ES", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
+      year: "numeric",
+      month: "long",
+      day: "numeric",
   });
   const time = now.toLocaleTimeString("es-ES", {
-    hour: "2-digit",
-    minute: "2-digit",
-    second: "2-digit",
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
   });
   document.getElementById("current-date").innerText = date;
   document.getElementById("current-time").innerText = time;
 }
 
+// TODO Función para obtener la temperatura
+async function getTemperature() {
+  const apiKey = '71e0a53f41608a0792ce91cf8914aa43'; // Tu clave de API
+  const city = 'San Cristóbal, VE'; // Ciudad deseada
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(city)}&appid=${apiKey}&units=metric`;
+
+  try {
+      const response = await fetch(url);
+      const data = await response.json();
+      const temperature = data.main.temp;
+      document.getElementById("temperature").innerText = temperature.toFixed(1); // Muestra la temperatura con un decimal
+  } catch (error) {
+      console.error("Error al obtener la temperatura:", error);
+      document.getElementById("temperature").innerText = "Error";
+  }
+}
+
+// Actualiza la fecha y la hora cada segundo
 setInterval(updateDateTime, 1000);
 updateDateTime();
 
+// Obtiene la temperatura al cargar la página
+getTemperature();
 
+
+// TODO Función para obtener la temperatura, según tu Geolocalización
+// function getLocation() {
+//   if (navigator.geolocation) {
+//       navigator.geolocation.getCurrentPosition(async (position) => {
+//           const lat = position.coords.latitude;
+//           const lon = position.coords.longitude;
+//           const apiKey = '71e0a53f41608a0792ce91cf8914aa43';
+//           const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+
+//           try {
+//               const response = await fetch(url);
+//               const data = await response.json();
+//               const temperature = data.main.temp;
+//               document.getElementById("temperature").innerText = temperature.toFixed(1);
+//           } catch (error) {
+//               console.error("Error al obtener la temperatura:", error);
+//               document.getElementById("temperature").innerText = "Error";
+//           }
+//       });
+//   } else {
+//       console.log("Geolocalización no es soportada por este navegador.");
+//   }
+// }
+
+// // Llama a la función para obtener la ubicación
+// getLocation();
