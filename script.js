@@ -1,3 +1,36 @@
+// TODO: Script para el conversor de divisas y criptomonedas
+async function fetchCryptoData() {
+  try {
+      const response = await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1&sparkline=false');
+      const data = await response.json();
+
+      // Crear el contenido del banner
+      let bannerContent = '';
+      data.forEach(coin => {
+          const changeText = coin.price_change_percentage_24h > 0 
+              ? `↑ ${coin.price_change_percentage_24h.toFixed(2)}%` 
+              : `↓ ${Math.abs(coin.price_change_percentage_24h).toFixed(2)}%`;
+          bannerContent += `
+              <div class="crypto-item">
+                  <span class="crypto-name">${coin.name}</span>
+                  <span class="crypto-price">$${coin.current_price.toFixed(2)}</span>
+                  <span class="crypto-change" style="color: ${coin.price_change_percentage_24h > 0 ? 'green' : 'red'};">(${changeText})</span>
+              </div>
+          `;
+      });
+
+      // Actualizar el contenido del banner
+      document.getElementById('banner-content').innerHTML = bannerContent;
+  } catch (error) {
+      console.error("Error fetching crypto data:", error);
+      document.getElementById('banner-content').textContent = "Error al cargar datos de criptomonedas.";
+  }
+}
+
+// Llamar a la función al cargar la página
+document.addEventListener("DOMContentLoaded", fetchCryptoData);
+
+
 // TODO: Claves de API
 const apiKeyExchangeRate = "f390895452a9366a9eeff7c3"; // Reemplaza con tu propia clave de API
 const apiKeyNews = "fb98581019a54258bd249f25b15a0e62"; // Clave de API de NewsAPI

@@ -496,3 +496,40 @@ th {
 	50%{color: red;}
 	100%{color: white;}
 }
+
+
+#crypto-banner {
+	background-color: #ffffff; /* Color de fondo */
+	color: black; /* Color del texto */
+	padding: 10px; /* Espaciado */
+	font-size: 18px; /* Tamaño de fuente */
+	overflow: hidden; /* Ocultar el desbordamiento */
+	
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidad */
+}
+
+#banner-content {
+	display: inline-block;
+	animation: marquee 1s linear infinite; /* Aumenta el tiempo a 60 segundos */
+}
+
+.crypto-item {
+	display: inline-block;
+	margin-right: 30px; /* Espacio entre criptomonedas */
+}
+
+.crypto-name {
+	font-weight: bold; /* Nombre en negrita */
+}
+
+.crypto-price {
+	margin-left: 5px; /* Espacio entre nombre y precio */
+}
+
+.crypto-change {
+	margin-left: 5px; /* Espacio entre precio y cambio */
+}
+@keyframes marquee {
+	100% { transform: translateX(100%); }
+	100% { transform: translateX(-100%); }
+}
