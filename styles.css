@@ -116,7 +116,7 @@ header .btn:hover {
 	/* Espaciado proporcional */
 	margin: 0 auto;
 	/* Espaciado interno proporcional */
-	padding: 1.3rem;
+	padding: 0 1.3rem;
 	/* Sombra */
 	/* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);*/
 	/* Fondo claro por defecto */
