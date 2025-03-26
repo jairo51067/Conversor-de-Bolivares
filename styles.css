@@ -520,11 +520,6 @@ th {
 
 	.container {
 		flex-direction: column;
-		/* Apilado vertical */
-		padding: 1.3rem;
-		/* Sin padding */
-		margin: 0;
-		/* Sin margen */
 	}
 }
 
