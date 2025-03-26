@@ -3,15 +3,20 @@
 	--font-size-base: 1rem;
 	/* Cambiado a rem para mayor flexibilidad */
 }
+
 /* Reset de márgenes y padding */
-*,*::after,*::before {
+*,
+*::after,
+*::before {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 }
+
 html {
 	font-size: var(--font-size-base);
 }
+
 /* Tema claro (por defecto) */
 body {
 	/* Fondo más claro */
@@ -23,13 +28,7 @@ body {
 	line-height: 1.5;
 	/* Mejora la legibilidad */
 }
-/* Tema oscuro */
-body.dark-mode {
-	background-color: #121212;
-	/* Fondo oscuro */
-	color: #ffffff;
-	/* Texto claro */
-}
+
 header {
 	background-image: linear-gradient(to bottom right, yellow, blue 60%, red);
 	padding: 2rem;
@@ -41,9 +40,10 @@ header {
 	align-items: center;
 	/* Alinear los elementos en la línea vertical */
 	color: #333;
-  /* Sombra con opacidad */
+	/* Sombra con opacidad */
 	box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.2) inset;
 }
+
 header h1 {
 	margin: 0;
 	/* Eliminar márgenes por defecto */
@@ -52,6 +52,7 @@ header h1 {
 	font-weight: bold;
 	/* Negrita para el título */
 }
+
 header .btn {
 	background-color: #f8f9fa;
 	/* Color de fondo del botón */
@@ -64,16 +65,19 @@ header .btn {
 	transition: background-color 0.3s;
 	/* Transición suave para el fondo */
 }
+
 /* Efecto al pasar el ratón sobre el botón */
 header .btn:hover {
 	background-color: #e2e6ea;
 	/* Color de fondo más oscuro al pasar el ratón */
 }
+
 /* Estilo para el icono del tema */
 #theme-icon {
 	margin-left: 5px;
 	/* Espaciado a la izquierda del icono */
 }
+
 /* Contenedores */
 .date-time {
 	display: flex;
@@ -86,6 +90,7 @@ header .btn:hover {
 	color: black;
 	/* Texto oscuro */
 }
+
 .container {
 	display: flex;
 	/* Elementos en línea */
@@ -102,7 +107,7 @@ header .btn:hover {
 	padding: 1rem;
 	/* Espaciado interno */
 	/* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);*/
-	background: linear-gradient(white, #aed6f1 40% 70%, #89b6fa 100%) ;
+	background: linear-gradient(white, #aed6f1 40% 70%, #89b6fa 100%);
 	/* background-color: #aed6f1; */
 	/* background: #4285F4; */
 	/* Fondo claro por defecto */
@@ -111,7 +116,12 @@ header .btn:hover {
 	max-width: 100%;
 	/* Ancho máximo */
 }
-.container-conversor,.contenedor-noticias,.container-bolivarDolarPesos,.container-valorDollar,.container-factores {
+
+.container-conversor,
+.contenedor-noticias,
+.container-bolivarDolarPesos,
+.container-valorDollar,
+.container-factores {
 	width: 100%;
 	/* Espaciado proporcional */
 	margin: 0 auto;
@@ -125,25 +135,52 @@ header .btn:hover {
 	/* border: 1px solid #ccc;*/
 	border-radius: 10px;
 }
+
 .container-conversor {
 	border: none;
 }
-body.dark-mode .date-time {
-	/* background-color: #333;*/
+
+/* Tema oscuro */
+body.dark-mode {
+	background: #222831;
+	/* Fondo oscuro */
+	color: #ffffff;
+	/* Texto claro */
+}
+
+body.dark-mode .date-time,
+body.dark-mode #crypto-banner,
+body.dark-mode .estiloFactor,
+body.dark-mode .estiloDolar {
+	background: #222831;
 	/* Fondo oscuro */
 	border: none;
 	/* Borde más suave */
 	color: #fff;
 }
-body.dark-mode .container,body.dark-mode .container-conversor,body.dark-mode .contenedor-noticias,body.dark-mode .container-valorDollar,body.dark-mode .container-bolivarDolarPesos,body.dark-mode .container-factores {
+
+body.dark-mode .container,
+body.dark-mode .container-conversor,
+body.dark-mode .contenedor-noticias,
+body.dark-mode .container-valorDollar,
+body.dark-mode .container-bolivarDolarPesos,
+body.dark-mode .container-factores {
 	/* Fondo oscuro */
-	background: #1e1e1e;
+	background: #222831;
 	/* Borde más suave */
 	/* border: 1px solid #f7f5f5;*/
 	border: none;
 	/* padding: 5%;
 	*/
 }
+
+body.dark-mode .gradient-info,
+body.dark-mode .gradient-success {
+  background: #393e45;
+  border: none;
+	color: #ffffff;
+}
+
 .subtitulo {
 	font-size: 0.9em;
 	/* Tamaño de fuente más pequeño */
@@ -152,41 +189,50 @@ body.dark-mode .container,body.dark-mode .container-conversor,body.dark-mode .co
 	opacity: 0.9;
 	/* Opacidad para un efecto más elegante */
 }
+
 h1 {
 	text-align: start;
 	align-items: center;
 	/* font-size: 2rem;*/
 	/* Tamaño de fuente proporcional */
 }
+
 h2 {
 	margin: 1rem 0;
 	/* Espaciado uniforme */
 }
+
 h3 {
 	margin: 1rem 0;
 	/* Espaciado uniforme */
 }
+
 h4 {
 	margin: 1rem 0;
 	/* Espaciado uniforme */
 }
+
 h5 {
 	margin: 1rem 0;
 	/* Espaciado uniforme */
 }
+
 a {
 	color: #007bff;
 	text-decoration: none;
 	font-size: 0.9rem;
 	/* Tamaño de fuente proporcional */
 }
+
 /* Formulario */
 form {
 	display: flex;
 	flex-direction: column;
 }
+
 /* Estilos generales para los campos de entrada */
-input,select {
+input,
+select {
 	width: 100%;
 	/* Campos de entrada ocupan todo el ancho */
 	margin: 0.5rem 0;
@@ -204,8 +250,10 @@ input,select {
 	background-color: #f9f9f9;
 	/* Color de fondo suave */
 }
+
 /* Efecto de enfoque */
-input:focus,select:focus {
+input:focus,
+select:focus {
 	border-color: #007bff;
 	/* Color del borde al enfocar */
 	box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
@@ -213,13 +261,15 @@ input:focus,select:focus {
 	outline: none;
 	/* Eliminar el contorno predeterminado */
 }
-.form-control{
+
+.form-control {
 	height: 50px;
 	font-size: 18px;
-	font-style:normal;
+	font-style: normal;
 	font-weight: 400;
 	line-height: 1.5;
 }
+
 /* Estilo para el contenedor de los campos */
 .field-container {
 	margin: 1rem 0;
@@ -235,6 +285,7 @@ input:focus,select:focus {
 	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 	/* Sombra suave para el contenedor */
 }
+
 /* Estilo para etiquetas */
 label {
 	font-weight: bold;
@@ -244,6 +295,7 @@ label {
 	display: block;
 	/* Asegura que la etiqueta esté en una nueva línea */
 }
+
 button {
 	width: 100%;
 	background-color: #007bff;
@@ -254,13 +306,16 @@ button {
 	transition: background-color 0.3s, transform 0.2s;
 	/* Transición suave */
 }
+
 button:hover {
 	background-color: #0056b3;
 	/* Color del botón al pasar el mouse */
 	transform: translateY(-2px);
 	/* Efecto de elevación */
 }
-#result,#history-list {
+
+#result,
+#history-list {
 	border: none;
 	padding: 0.75rem;
 	/* Espaciado interno */
@@ -270,6 +325,7 @@ button:hover {
 	transition: background-color 0.3s;
 	/* Transición para el color de fondo */
 }
+
 /* Botones */
 #theme-toggle {
 	width: auto;
@@ -285,6 +341,7 @@ button:hover {
 	*/
 	/* Espaciado interno */
 }
+
 button {
 	width: 100%;
 	background-color: #007bff;
@@ -295,23 +352,27 @@ button {
 	transition: background-color 0.3s, transform 0.2s;
 	/* Transición suave */
 }
+
 button:hover {
 	background-color: #0056b3;
 	/* Color del botón al pasar el mouse */
 	transform: translateY(-2px);
 	/* Efecto de elevación */
 }
+
 /* Estilos adicionales */
 #history {
 	margin-top: 1rem;
 	/* Espaciado superior */
 }
+
 #history-list {
 	list-style-type: none;
 	/* Sin viñetas */
 	padding: 0;
 	/* Sin padding */
 }
+
 .estiloDolar {
 	color: green;
 	/* Cambia el color del texto */
@@ -320,6 +381,7 @@ button:hover {
 	font-size: 1.5em;
 	/* Aumenta el tamaño de la fuente */
 }
+
 .estiloFactor {
 	color: blue;
 	/* Cambia el color del texto */
@@ -328,6 +390,7 @@ button:hover {
 	font-size: 1.5em;
 	/* Aumenta el tamaño de la fuente */
 }
+
 footer {
 	/* Alineación a la derecha */
 	text-align: right;
@@ -346,6 +409,7 @@ footer {
 	/* Espaciado en la parte superior */
 	/* margin-top: 20px; */
 }
+
 /* Estilo para el párrafo */
 footer p {
 	margin: 0;
@@ -353,6 +417,7 @@ footer p {
 	font-size: 0.9rem;
 	/* Tamaño de fuente más pequeño */
 }
+
 /* Estilo para el encabezado */
 footer h5 {
 	margin: 0.5rem 0;
@@ -362,6 +427,7 @@ footer h5 {
 	font-weight: 600;
 	/* Negrita */
 }
+
 /* Estilo para el enlace */
 footer a {
 	color: #00bfff;
@@ -371,6 +437,7 @@ footer a {
 	transition: color 0.3s;
 	/* Transición suave para el color */
 }
+
 /* Efecto al pasar el ratón sobre el enlace */
 footer a:hover {
 	color: #ffcc00;
@@ -378,27 +445,34 @@ footer a:hover {
 	text-decoration: underline;
 	/* Subrayar al pasar el ratón */
 }
+
 /* Estilos de modo oscuro para botones */
 body.dark-mode button {
 	background-color: #3a3a3a;
 	/* Color del botón en modo oscuro */
 	color: #ffffff;
 }
+
 body.dark-mode button:hover {
 	background-color: #4a4a4a;
 	/* Color del botón al pasar el mouse en modo oscuro */
 }
-#resultado,#resultadoBcv {
+
+#resultado,
+#resultadoBcv {
 	font-weight: bold;
 	/* Negrita */
 }
+
 table {
 	width: 100%;
 	/* Tabla ocupa todo el ancho */
 	border-collapse: collapse;
 	/* Colapsar bordes */
 }
-th,td {
+
+th,
+td {
 	border: 1px solid #ddd;
 	/* Bordes suaves */
 	padding: 0.5rem;
@@ -406,36 +480,44 @@ th,td {
 	text-align: center;
 	/* Alineación centrada */
 }
+
 th {
 	background-color: #f2f2f2;
 	/* Fondo de encabezado */
 }
+
 .gradient-info {
-	background: radial-gradient(circle 250px, #17a2b8, #0dcaf0);
+	/* background: radial-gradient(circle 250px, #17a2b8, #0dcaf0); */
+	background: #00adb5;
 	/* Colores de info */
-	color: white;
+	/* color: white; */
 	padding: 15px;
 	border-radius: 8px;
 	text-align: start;
 }
+
 .gradient-success {
-	background: radial-gradient(circle 250px, #28a745, #85e89e);
+	/* background: radial-gradient(circle 250px, #28a745, #85e89e); */
+	background: #28a745;
 	/* Colores de success */
-	color: white;
+	/* color: white; */
 	padding: 15px;
 	border-radius: 8px;
 	text-align: start;
 }
+
 /* Media query para pantallas de 1000px o menos */
 @media only screen and (max-width: 1000px) {
 	html {
 		font-size: calc(var(--font-size-base) * 0.9);
 		/* Ajuste de tamaño de fuente */
 	}
+
 	h1 {
 		font-size: 1.5rem;
 		/* Ajuste para pantallas pequeñas */
 	}
+
 	.container {
 		flex-direction: column;
 		/* Apilado vertical */
@@ -445,6 +527,7 @@ th {
 		/* Sin margen */
 	}
 }
+
 /* Media query para pantallas de 500px o menos */
 /* Estilos para dispositivos móviles */
 @media only screen and (max-width: 500px) {
@@ -452,7 +535,9 @@ th {
 		font-size: calc(var(--font-size-base) * 0.8);
 		/* Ajuste de tamaño de fuente */
 	}
-	input,select {
+
+	input,
+	select {
 		padding: 1rem;
 		/* Aumentar el espaciado interno en móviles */
 		font-size: 2rem;
@@ -463,82 +548,132 @@ th {
 		/* Color de fondo más claro en móviles */
 	}
 }
+
 /* Animaciones */
-.show{
+.show {
 	animation:
-    change-color 5s linear 0.5s 4 normal forwards running;
-}
-@keyframes change-color{
-	0%{background-color: #7c7c7c;}
-	50%{background-color: #333;}
-	100%{background-color: #333;}
+		change-color 5s linear 0.5s 4 normal forwards running;
 }
 
-.run{
+@keyframes change-color {
+	0% {
+		background-color: #7c7c7c;
+	}
+
+	50% {
+		background-color: #333;
+	}
+
+	100% {
+		background-color: #333;
+	}
+}
+
+.run {
 	animation:
-    run-color 5s linear 0.5s 3 normal forwards running;
+		run-color 5s linear 0.5s 3 normal forwards running;
 }
 
-@keyframes run-color{
-	0%{background-color: #89b6fa;}
-  50%{background-color: 	#9bbff4;}
-  100%{background-color: #a7cdf2;}
+@keyframes run-color {
+	0% {
+		background-color: #89b6fa;
+	}
+
+	50% {
+		background-color: #9bbff4;
+	}
+
+	100% {
+		background-color: #a7cdf2;
+	}
 }
 
-.cash{
+.cash {
 	animation:
-    cash-color 5s linear 0.5s 2 normal forwards running;
+		cash-color 5s linear 0.5s 2 normal forwards running;
 }
 
-@keyframes cash-color{
-	0%{color: yellow;}
-	25%{color: blue;}
-	50%{color: red;}
-	100%{color: white;}
+@keyframes cash-color {
+	0% {
+		color: yellow;
+	}
+
+	25% {
+		color: blue;
+	}
+
+	50% {
+		color: red;
+	}
+
+	100% {
+		color: white;
+	}
 }
 
 
 #crypto-banner {
-	background-color: #ffffff; /* Color de fondo */
-	color: black; /* Color del texto */
-	padding: 10px; /* Espaciado */
-	font-size: 18px; /* Tamaño de fuente */
-	overflow: hidden; /* Ocultar el desbordamiento */
-	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidad */
-	position: relative; /* Posición relativa para el banner */
-	width: 100%; /* Ancho completo */
-	margin: 0 auto; /* Centrado */
-	text-align: center; /* Centrado del texto */
+	background-color: #ffffff;
+	/* Color de fondo */
+	color: black;
+	/* Color del texto */
+	padding: 10px;
+	/* Espaciado */
+	font-size: 18px;
+	/* Tamaño de fuente */
+	overflow: hidden;
+	/* Ocultar el desbordamiento */
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+	/* Sombra para dar profundidad */
+	position: relative;
+	/* Posición relativa para el banner */
+	width: 100%;
+	/* Ancho completo */
+	margin: 0 auto;
+	/* Centrado */
+	text-align: center;
+	/* Centrado del texto */
 }
 
 #banner-content {
-	white-space: nowrap; /* Evitar el salto de línea */
+	white-space: nowrap;
+	/* Evitar el salto de línea */
 	display: inline-block;
 	/* Sin animación inicialmente */
 }
 
 .crypto-item {
 	display: inline-block;
-	margin-right: 30px; /* Espacio entre criptomonedas */
+	margin-right: 30px;
+	/* Espacio entre criptomonedas */
 }
 
 .crypto-name {
-	font-weight: bold; /* Nombre en negrita */
+	font-weight: bold;
+	/* Nombre en negrita */
 }
 
 .crypto-price {
-	margin-left: 5px; /* Espacio entre nombre y precio */
+	margin-left: 5px;
+	/* Espacio entre nombre y precio */
 }
 
 .crypto-change {
-	margin-left: 5px; /* Espacio entre precio y cambio */
+	margin-left: 5px;
+	/* Espacio entre precio y cambio */
 }
 
 .marquee {
-	animation: marquee 30s linear infinite; /* Ajusta la duración de la animación aquí */
+	animation: marquee 30s linear infinite;
+	/* Ajusta la duración de la animación aquí */
 }
 
 @keyframes marquee {
-	0% { transform: translateX(15%); }
-	100% { transform: translateX(-100%); }
+	0% {
+		transform: translateX(15%);
+	}
+
+	100% {
+		transform: translateX(-100%);
+	}
 }
