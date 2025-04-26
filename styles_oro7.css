@@ -1,0 +1,360 @@
+/* styles.css */
+:root {
+  --font-size-base: 1rem;
+  /* Cambiado a rem para mayor flexibilidad */
+}
+
+/* Reset de márgenes y padding */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: var(--font-size-base);
+}
+
+body {
+  display: flex;
+  flex-direction: column;  /* Coloca los elementos en una columna */
+  min-height: 100vh;  /* Asegura que el body ocupe al menos el 100% de la altura de la ventana */
+  background-image: url('https://img.freepik.com/foto-gratis/monedas-lingotes-oro-esparcidos-sobre-mesa_181624-59753.jpg?ga=GA1.1.1637295575.1745600256&semt=ais_hybrid&w=740');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-image: linear-gradient(to bottom right, yellow, blue 60%, red);
+  padding: 2rem;
+  /* Espaciado interno */
+  display: flex;
+  /* Elementos en línea */
+  justify-content: space-between;
+  /* Alinear los elementos en la línea horizontal */
+  align-items: center;
+  /* Alinear los elementos en la línea vertical */
+  color: #fff;
+  /* Sombra con opacidad */
+  box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.2) inset;
+}
+
+header h1 {
+  margin: 0;
+  /* Eliminar márgenes por defecto */
+  font-size: 1.5rem;
+  /* Tamaño de fuente más grande */
+  font-weight: bold;
+  /* Negrita para el título */
+  color: #fff;
+}
+
+header .btn {
+  /* background-color: #333; */
+  /* Color de fondo del botón */
+  color: #f8f9fa;
+  /* Color del texto del botón */
+  border: none;
+  /* Sin borde */
+  border-radius: 5px;
+  /* Bordes redondeados */
+  transition: background-color 0.3s;
+  /* Transición suave para el fondo */
+}
+
+/* Efecto al pasar el ratón sobre el botón */
+header .btn:hover {
+  background-color: #e2e6ea;
+  /* Color de fondo más oscuro al pasar el ratón */
+  color: #333;
+}
+
+main {
+  width: 95%;
+  max-width: 1024px;
+  min-height: 65vh;
+  margin: 10px auto;
+  /* margin-bottom: 0; */
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.subtitulo {
+  font-size: 0.9em;
+  /* Tamaño de fuente más pequeño */
+  color: #888;
+  /* Color gris para un efecto disimulado */
+  opacity: 0.9;
+  /* Opacidad para un efecto más elegante */
+}
+
+.pureza-valor,
+.calculadora-oro {
+  display: flex;
+  justify-content: space-between;
+}
+
+.pureza,
+.valor {
+  width: 50%;
+  padding: 1%;
+}
+
+.onzas,
+.gramos,
+.operacion {
+  width: 33%;
+  padding: 1%;
+}
+
+
+h1 {
+  text-align: start;
+  align-items: center;
+  /* font-size: 2rem;*/
+  /* Tamaño de fuente proporcional */
+}
+
+h2 {
+  margin: 0;
+  /* Espaciado uniforme */
+}
+
+h3 {
+  margin: 0;
+  /* Espaciado uniforme */
+}
+
+h4 {
+  margin: 0;
+  /* Espaciado uniforme */
+}
+
+h5 {
+  margin: 0;
+  /* Espaciado uniforme */
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+  /* font-size: 0.9rem; */
+  /* Tamaño de fuente proporcional */
+  font-weight: bold;
+}
+
+/* Formulario */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Estilos generales para los campos de entrada */
+input,
+select {
+  width: 75%;
+  /* Campos de entrada ocupan todo el ancho */
+  margin: 0.5rem 0;
+  /* Espaciado uniforme */
+  padding: 0.75rem;
+  /* Espaciado interno */
+  border: 1px solid #ccc;
+  /* Borde más suave */
+  border-radius: 5px;
+  /* Bordes redondeados */
+  transition: border-color 0.3s, box-shadow 0.3s;
+  /* Transición para el borde y sombra */
+  font-size: 0.8rem;
+  /* Tamaño de fuente */
+  background-color: #f9f9f9;
+  /* Color de fondo suave */
+}
+
+/* Efecto de enfoque */
+input:focus,
+select:focus {
+  border-color: #007bff;
+  /* Color del borde al enfocar */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  /* Sombra al enfocar */
+  outline: none;
+  /* Eliminar el contorno predeterminado */
+}
+
+.form-control {
+  height: 50px;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+button {
+  /* background-color: #3498db; */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 48%;
+  margin: 5px 1%;
+}
+
+button:hover {
+  padding: 0;
+}
+
+.resultado {
+  display: none;
+  margin: 20px;
+  padding: 20px;
+  background-color: #d3d6d6;
+  border-radius: 4px;
+}
+
+.resultado h3 {
+  margin: 0;
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+.resultado-texto {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: green;
+}
+
+.resultado-total {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.resultado-aviso{
+  font-size: 0.9em;
+  /* Tamaño de fuente más pequeño */
+  font-weight: bold;
+  color: #e74c3c;
+  /* Color rojo para un efecto aviso */
+  opacity: 0.9;
+  /* Opacidad para un efecto más elegante */
+}
+
+footer {
+  /* Alineación a la derecha */
+  text-align: right;
+  /* Mejora la legibilidad */
+  line-height: 1.5;
+  /* Fondo oscuro */
+  background-color: #333;
+  /* background-image: linear-gradient(to bottom right, yellow, blue 60%, red);
+*/
+  /* Texto claro */
+  color: #ffffff;
+  /* Espaciado interno */
+  padding: 20px;
+  /* Sombra suave para dar profundidad */
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
+  /* Espaciado en la parte superior */
+  margin-top: auto;
+}
+
+/* Estilo para el párrafo */
+footer p {
+  margin: 0;
+  /* Eliminar márgenes por defecto */
+  font-size: 0.9rem;
+  /* Tamaño de fuente más pequeño */
+}
+
+/* Estilo para el encabezado */
+footer h5 {
+  margin: 0.5rem 0;
+  /* Espaciado superior e inferior */
+  font-size: 1rem;
+  /* Tamaño de fuente */
+  font-weight: 600;
+  /* Negrita */
+}
+
+/* Estilo para el enlace */
+footer a {
+  color: #00bfff;
+  /* Color del enlace */
+  text-decoration: none;
+  /* Sin subrayado */
+  transition: color 0.3s;
+  /* Transición suave para el color */
+}
+
+/* Efecto al pasar el ratón sobre el enlace */
+footer a:hover {
+  color: #ffcc00;
+  /* Color del enlace al pasar el ratón */
+  text-decoration: underline;
+  /* Subrayar al pasar el ratón */
+}
+
+
+
+/* Media query para pantallas de 1000px o menos */
+@media only screen and (max-width: 1000px) {
+  html {
+    font-size: calc(var(--font-size-base) * 0.9);
+    /* Ajuste de tamaño de fuente */
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    /* Ajuste para pantallas pequeñas */
+  }
+
+  .container {
+    flex-direction: column;
+  }
+}
+
+/* Media query para pantallas de 500px o menos */
+/* Estilos para dispositivos móviles */
+@media only screen and (max-width: 500px) {
+  html {
+    font-size: calc(var(--font-size-base) * 0.8);
+    /* Ajuste de tamaño de fuente */
+  }
+
+  input,
+  select {
+    padding: 1rem;
+    /* Aumentar el espaciado interno en móviles */
+    font-size: 1.2rem;
+    /* Aumentar el tamaño de fuente en móviles */
+    border-radius: 10px;
+    /* Bordes más redondeados en móviles */
+    background-color: #e9ecef;
+    /* Color de fondo más claro en móviles */
+    width: 100%;
+  }
+
+  .pureza-valor,
+  .calculadora-oro {
+    flex-direction: column;
+  }
+
+  .pureza,
+  .valor,
+  .onzas,
+  .gramos,
+  .operacion {
+    width: 100%;
+  }
+}

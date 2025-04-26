@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Calculadora de Monedas para convertir Bolívares, Dólares, Euros y Pesos Colombianos. Obtén tasas de cambio actualizadas y realiza conversiones fácilmente.">
+  <meta name="keywords" content="calculadora, monedas, bolívares, dólares, euros, pesos, conversor, tasas de cambio">
+  <meta name="author" content="Jairo Cárdenas">
+  <meta property="og:title" content="Calculadora de Monedas">
+  <meta property="og:description"
+    content="Convierte Bolívares a Dólares, Euros y Pesos Colombianos con tasas de cambio actualizadas.">
+  <link rel="shortcut icon" href="./src/assets/android-chrome-192x192.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles_oro7.css">
+  <title>Valor del Oro 7</title>
+</head>
+
+<body>
+  <header class="flex-column flex-lg-row">
+    <div>
+      <h1>Valor del Oro en Dólares</h1>
+      <p class="font-italic" style="font-size: 0.8rem;">Consulta el valor del oro en tiempo real para el calculo del
+        precio de
+        compra y venta según la pureza y la cantidad.</p>
+    </div>
+    <div class="d-flex justify-content-around w-100">
+
+      <!-- TODO: Consultar el valor del oro -->
+      <div>
+        <a href="https://www.exchange-rates.org/es/metales-preciosos/oro/estados-unidos" target="_blank"
+          class="btn btn-success">Exchange-rates.org</a>
+      </div>
+      <div>
+        <a href="https://www.tradingview.com/symbols/XAUUSD/?exchange=FOREXCOM" target="_blank"
+          class="btn btn-success">TradingView</a>
+      </div>
+
+      <div>
+        <a href="index.html" class="btn btn-dark">Retornar</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- TODO: Pureza y Valor del Oro -->
+    <div class="pureza-valor">
+      <div class="valor">
+        <h2>Valor del Oro 24k</h2>
+        <label class="subtitulo">Introduce el Valor de una onza troy 24k:</label>
+        <input type="number" id="valorOnzaTroyInput" placeholder="Valor actual onza troy 24k">
+      </div>
+      <div class="pureza">
+        <h2>Pureza del Oro</h2>
+        <label class="subtitulo">Selecciona el tipo de oro, según nivel de pureza:</label>
+        <select id="tipoOro">
+          <option value="24">24k</option>
+          <option value="22">22k</option>
+          <option value="18">18k</option>
+          <option value="14">14k</option>
+          <option value="10">10k</option>
+        </select>
+        <p class="resultado-aviso">Los cálculos se ajustaran según la pureza del Oro</p>
+      </div>
+
+
+    </div>
+
+    <hr>
+
+    <!-- TODO: Calculadora de Oro -->
+    <h2>Calculadora de Oro</h2>
+    <p class="resultado-aviso">Por defecto todos los cálculos son en base a 24k</p>
+    <div class="calculadora-oro">
+      <div class="onzas">
+        <label class="subtitulo">Cantidad de oro en onzas troy de 24k:</label>
+        <input type="number" id="cantidadOroInput" placeholder="Cantidad de oro en onzas troy" value="1">
+      </div>
+      <div class="gramos">
+        <label class="subtitulo">Cantidad de oro en gramos de 24k:</label>
+        <input type="number" id="cantidadGramosInput" placeholder="Cantidad de oro en gramos">
+      </div>
+      <div class="operacion">
+        <label class="subtitulo">Selecciona el tipo de operación:</label>
+        <select id="tipoOperacion">
+          <option value="compra">Compra</option>
+          <option value="venta">Venta</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="resultado" id="resultado">
+      <h3>Resultado:</h3>
+      <p class="resultado-texto" id="resultadoTexto"></p>
+      <p class="resultado" id="resultadoPrecioOnza"></p>
+      <p class="resultado" id="resultadoPrecioGramo"></p>
+      <p class="resultado-total" id="resultadoValorTotalOnza"></p>
+      <p class="resultado-total" id="resultadoValorTotalGramos"></p>
+      <p class="resultado-aviso">El resultado depende de la pureza del Oro: asegúrese de seleccionar la pureza correcta,
+        por defecto los cálculos son en base a 24k</p>
+    </div>
+
+
+    <div class="d-flex justify-content-around">
+      <button class="btn btn-primary" id="calcularBtn">Calcular</button>
+      <button class="btn btn-primary" id="limpiarBtn">Limpiar</button>
+    </div>
+
+  </main>
+
+  <footer class="text-right p-3">
+    <p>©2024 Conversor de bolivares. - Todos los derechos reservados.</p>
+    <p>Author: Jairo Cárdenas<br>
+      <a href="mailto:jairo.cardenas.dev@gmail.com">jairo.cardenas.dev@gmail.com</a>
+    </p>
+  </footer>
+
+  <script src="script_oro7.js"></script>
+</body>
+
+</html>
