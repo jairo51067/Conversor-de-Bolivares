@@ -191,13 +191,13 @@ select:focus {
   /* Eliminar el contorno predeterminado */
 }
 
-.form-control {
+/* .form-control {
   height: 50px;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
-}
+} */
 
 button {
   /* background-color: #3498db; */

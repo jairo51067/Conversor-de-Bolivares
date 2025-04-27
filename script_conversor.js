@@ -35,6 +35,45 @@ async function fetchCryptoData() {
 // Llamar a la función al cargar la página
 document.addEventListener("DOMContentLoaded", fetchCryptoData);
 
+// TODO: Script para el banner en el conversor de divisas - acciones de la bolsa
+async function fetchStockData() {
+  try {
+      const response = await fetch('https://api.example.com/stocks?order=market_cap_desc&per_page=10&page=1');
+      const data = await response.json();
+
+      // Crear el contenido del banner
+      let bannerContent = '';
+      data.forEach(stock => {
+          const changeText = stock.price_change_percentage_24h > 0 
+              ? `↑ ${stock.price_change_percentage_24h.toFixed(2)}%` 
+              : `↓ ${Math.abs(stock.price_change_percentage_24h).toFixed(2)}%`;
+          bannerContent += `
+              <div class="stock-item">
+                  <span class="stock-name">${stock.name} (${stock.symbol})</span>
+                  <span class="stock-price">$${stock.current_price.toFixed(2)}</span>
+                  <span class="stock-change" style="color: ${stock.price_change_percentage_24h > 0 ? 'green' : 'red'};">(${changeText})</span>
+              </div>
+          `;
+      });
+
+      // Actualizar el contenido del banner
+      document.getElementById('banner-content').innerHTML = bannerContent;
+
+      // Iniciar la animación después de un pequeño retraso
+      setTimeout(() => {
+          document.getElementById('banner-content').classList.add('marquee');
+      }, 3000); // 3 segundos de retraso
+  } catch (error) {
+      console.error("Error fetching stock data:", error);
+      document.getElementById('banner-content').textContent = "Error al cargar datos de acciones.";
+  }
+}
+
+// Llamar a la función al cargar la página
+document.addEventListener("DOMContentLoaded", fetchStockData);
+
+
+
 
 // TODO: Claves de API
 const apiKeyExchangeRate = "f390895452a9366a9eeff7c3"; // Reemplaza con tu propia clave de API

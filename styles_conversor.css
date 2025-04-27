@@ -233,22 +233,22 @@ form {
 /* Estilos generales para los campos de entrada */
 input,
 select {
-	width: 100%;
-	/* Campos de entrada ocupan todo el ancho */
-	margin: 0.5rem 0;
-	/* Espaciado uniforme */
-	padding: 0.75rem;
-	/* Espaciado interno */
-	border: 1px solid #ccc;
-	/* Borde más suave */
-	border-radius: 5px;
-	/* Bordes redondeados */
-	transition: border-color 0.3s, box-shadow 0.3s;
-	/* Transición para el borde y sombra */
-	font-size: 2rem;
-	/* Tamaño de fuente */
-	background-color: #f9f9f9;
-	/* Color de fondo suave */
+  width: 100%;
+  /* Campos de entrada ocupan todo el ancho */
+  margin: 0.5rem 0;
+  /* Espaciado uniforme */
+  padding: 0.75rem;
+  /* Espaciado interno */
+  border: 1px solid #ccc;
+  /* Borde más suave */
+  border-radius: 5px;
+  /* Bordes redondeados */
+  transition: border-color 0.3s, box-shadow 0.3s;
+  /* Transición para el borde y sombra */
+  font-size: 0.8rem;
+  /* Tamaño de fuente */
+  background-color: #f9f9f9;
+  /* Color de fondo suave */
 }
 
 /* Efecto de enfoque */
@@ -488,9 +488,9 @@ th {
 
 .gradient-info {
 	/* background: radial-gradient(circle 250px, #17a2b8, #0dcaf0); */
-	background: #00adb5;
+	background: #00acb577;
 	/* Colores de info */
-	/* color: white; */
+	
 	padding: 15px;
 	border-radius: 8px;
 	text-align: start;
@@ -498,9 +498,9 @@ th {
 
 .gradient-success {
 	/* background: radial-gradient(circle 250px, #28a745, #85e89e); */
-	background: #28a745;
+	background: #28a74677;
 	/* Colores de success */
-	/* color: white; */
+	
 	padding: 15px;
 	border-radius: 8px;
 	text-align: start;
@@ -535,12 +535,13 @@ th {
 	select {
 		padding: 1rem;
 		/* Aumentar el espaciado interno en móviles */
-		font-size: 2rem;
+		font-size: 1.2rem;
 		/* Aumentar el tamaño de fuente en móviles */
 		border-radius: 10px;
 		/* Bordes más redondeados en móviles */
 		background-color: #e9ecef;
 		/* Color de fondo más claro en móviles */
+		width: 100%;
 	}
 }
 
