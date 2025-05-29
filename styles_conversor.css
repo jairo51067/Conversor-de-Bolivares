@@ -21,7 +21,7 @@ html {
 body {
 	/* Fondo más claro */
 	/* background-image: linear-gradient(to top #ffffff, #aed6f1, #00bfff) ; */
-	color: #333;
+	color: #222831;
 	/* Color del texto */
 	margin: 0 auto;
 	/* Centrado */
@@ -30,7 +30,8 @@ body {
 }
 
 header {
-	background-image: linear-gradient(to bottom right, yellow, blue 60%, red);
+	/* background-image: linear-gradient(to bottom right, yellow, blue 60%, red); */
+	background: #222831;
 	padding: 2rem;
 	/* Espaciado interno */
 	display: flex;
@@ -39,7 +40,7 @@ header {
 	/* Alinear los elementos en la línea horizontal */
 	align-items: center;
 	/* Alinear los elementos en la línea vertical */
-	color: #333;
+	color: #222831;
 	/* Sombra con opacidad */
 	box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.2) inset;
 }
@@ -56,7 +57,7 @@ header h1 {
 header .btn {
 	background-color: #f8f9fa;
 	/* Color de fondo del botón */
-	color: #333;
+	color: #222831;
 	/* Color del texto del botón */
 	border: none;
 	/* Sin borde */
@@ -330,7 +331,7 @@ button:hover {
 #theme-toggle {
 	width: auto;
 	margin: 0 0 0 auto;
-	background-color: #333;
+	background-color: #222831;
 	/* Fondo del botón */
 	color: white;
 	/* Texto del botón */
@@ -397,7 +398,7 @@ footer {
 	/* Mejora la legibilidad */
 	line-height: 1.5;
 	/* Fondo oscuro */
-	background-color: #333;
+	background-color: #222831;
 	/* background-image: linear-gradient(to bottom right, yellow, blue 60%, red);
 	*/
 	/* Texto claro */
@@ -557,11 +558,11 @@ th {
 	}
 
 	50% {
-		background-color: #333;
+		background-color: #222831;
 	}
 
 	100% {
-		background-color: #333;
+		background-color: #222831;
 	}
 }
 

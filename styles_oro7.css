@@ -27,7 +27,7 @@ body {
   background-position: center;
   background-attachment: fixed;
   font-family: 'Helvetica Neue', Arial, sans-serif;
-  color: #333;
+  /* color: #333; */
   margin: 0;
   padding: 0;
 }
@@ -74,7 +74,7 @@ header .btn {
 header .btn:hover {
   background-color: #e2e6ea;
   /* Color de fondo más oscuro al pasar el ratón */
-  color: #333;
+  color: #222831;
 }
 
 main {
@@ -256,7 +256,7 @@ footer {
   /* Mejora la legibilidad */
   line-height: 1.5;
   /* Fondo oscuro */
-  background-color: #333;
+  background: #222831;
   /* background-image: linear-gradient(to bottom right, yellow, blue 60%, red);
 */
   /* Texto claro */
